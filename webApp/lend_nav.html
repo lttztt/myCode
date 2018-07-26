@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/public.css" />
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+    <link type="text/css" rel="stylesheet" href="css/mobileSelect.css" />
+    <style>
+        /* progresBar的样式 */
+
+        #container{
+            width: 50%;
+            margin: 0 auto;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        #container .circleText{
+            position: absolute;
+            width: 100%;
+            bottom: 55px;
+            text-align: center;
+        }
+
+        /* 修改输入金额样式 */
+
+        .lend_bottom .input-span {
+            margin: 0;
+        }
+
+        .input-span .lend-price {
+            border: none;
+            text-align: right;
+        }
+
+        /* 新增的剩余可投金额 和 剩余时间 */
+
+        .lend_moneyTime {
+            width: 95%;
+            height: 30px;
+            line-height: 30px;
+            margin-left: 10px;
+            margin-bottom: -10px;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+
+        .lend_moneyTime span:nth-of-type(1) {
+            display: inline-block;
+            width: auto;
+            text-align: left;
+            color: #666666;
+            font-size: 12px;
+        }
+
+        .lend_moneyTime span:nth-of-type(2) {
+            display: inline-block;
+            width: auto;
+            text-align: right;
+            color: #666666;
+            float: right;
+        }
+
+        .lend_moneyTime>span>b {
+            font-weight: normal;
+            color: #FD5C1C;
+        }
+
+        /* 改变页面红包和输入框的样式 */
+
+        #lend_bottom ul li:nth-child(1) {
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        #lend_bottom ul li:nth-child(1),
+        .input-span .lend-price {
+            font-size: 18px;
+        }
+
+        .input-span input,
+        .input-span i {
+            vertical-align: baseline;
+        }
+
+        /* 增加确认弹窗 和 选择红包 */
+
+        #lend_verify {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            margin: 0 auto;
+            max-width: 750px;
+            background: rgba(0, 0, 0, .2);
+            z-index: 100;
+        }
+
+        #lend_verify .verify_wrap {
+            width: 300px;
+            position: fixed;
+            top: 15%;
+            left: 50%;
+            margin-left: -150px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .verify_wrap .verify_main {
+            min-height: 200px;
+        }
+
+        .verify_main .verify_content {
+            padding: 5px 20px;
+            margin-bottom: 20px;
+        }
+
+        .verify_content li {
+            display: block;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        .verify_content b {
+            color: #ff3919;
+            float: right;
+            display: block;
+            width: 100px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .verify_main .verify_bg {
+            padding: 5px 10px;
+        }
+
+        .verify_bg a {
+            display: block;
+        }
+
+        .verify_bg span {
+            float: right;
+            margin-right: 20px;
+            color: #666;
+        }
+
+        .verify_bg b {
+            color: #ff3919;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .verify_bg .active {
+            background: #fff url(../images/jiantou.png) no-repeat right 5px center;
+            background-size: 10px;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid green;
+            margin-top: 5px;
+        }
+
+        #ticket {
+            color: #ff3919;
+        }
+
+        .verify_wrap .verify_footer {
+            margin-top: 10px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .verify_footer ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .verify_footer a {
+            background: #ff3919;
+            color: #fff;
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 4px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .verify_footer li:nth-child(1) a {
+            background-color: #786f6f;
+        }
+    </style>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/mobileSelect.js"></script>
+    <script src="js/jQuery.textSlider.js" type="text/javascript"></script>
+    <script src="js/hhSwipe.js" type="text/javascript"></script>
+    <script src="js/my.js" type="text/javascript"></script>
+    <script src="js/component.js" type="text/javascript"></script>
+    <script src="test/progressbar.js"></script>
+    <!-- 引入CDN的两个库，来实现拖动 -->
+    <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <title>项目详情</title>
+
+    <body>
+        <div class="lend_nav">
+            <div class="lend_top">
+                <div class="lend_number">
+                    <!-- <div id="myStathalf2" style="margin:0 auto;height:152px;padding:20px 0;" data-dimension="200" data-text="15%" data-info="借款约定年化利率"
+                        data-width="14" data-fontsize="28" data-percent="15" data-fgcolor="#fd5c1c" data-bgcolor="#e4e4e4" data-type="half"
+                        data-icon="fa-task"></div> -->
+                        <div id="container">
+                            <div class="circleText">
+                                <h2>21%</h2>
+                                <p>借款约定年化利率</p>
+                            </div>
+                        </div>
+                </div>
+                <div class="lend_introduce public_ul">
+                    <ul>
+                        <li>
+                            <p>
+                                <i>100</i>万元</p>
+                            <span>借款总额</span>
+                        </li>
+                        <li id="deadline">
+                            <p>
+                                <i>180</i>天</p>
+                            <span>出借期限</span>
+                        </li>
+                        <li>
+                            <p>
+                                <i>等额本息</i>
+                            </p>
+                            <span>还款方式</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lend_moneyTime">
+                <span>可投金额：<b id="useable_lend"></b></span>
+                <span>剩余时间：
+                    <b id="loan_time"></b>
+                </span>
+            </div>
+            <div class="lend_bottom" id="lend_bottom">
+                <ul>
+                    <!-- <li>金额<span class="input-span"><input class="lend-price" maxlength="7" onkeyup="value=value.replace(/[^\d.]/g,'')" onchange="calculateInterest(this)" type="text" placeholder="请输入金额：100元起投"><i>元</i></span></li> -->
+                    <!-- <li>金额<span class="input-span"><input class="lend-price" maxlength="7" onkeyup="calculateInterest(this)" onchange="calculateInterest(this)" type="tel" placeholder="请输入金额：100元起投"><i>元</i></span></li> -->
+                    <li>金额
+                        <span class="input-span">
+                            <input class="lend-price" maxlength="7" type="tel" onkeyup="value=value.replace(/[^\d.]/g,'')" placeholder="请输入金额：100元起投">
+                            <i>元</i>
+                        </span>
+                    </li>
+                    <p id="balance">账户金额：
+                        <b>0.00元</b>
+                        <span id="earnings">预期收益：
+                            <b>0.00元</b>
+                        </span>
+                    </p>
+                    <li class="am_active">
+                        <a href="lend_record.html">出借记录
+                            <span>1笔</span>
+                        </a>
+                    </li>
+                    <li class="am_active">
+                        <a href="lend_nav_det.html">项目详情</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="lend_footer public_ul">
+                <ul>
+                    <li>
+                        <a href="recharge.html">我要充值</a>
+                    </li>
+                    <li class="am_active">
+                        <a href="#">我要出借</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 温馨提示的弹框 -->
+        <div class="popup_box" id="lend_warm">
+            <div class="public_popup">
+                <h1 class="popup_h1">
+                    <span>温馨提示</span>
+                    <i class="iconfont"></i>
+                </h1>
+                <div class="popup_nav">
+                    <p></p>
+                </div>
+                <a href="javascript:void(0)" class="buttonName"></a>
+            </div>
+        </div>
+        <!-- 确认出借信息 -->
+        <div id="lend_verify">
+            <div class="verify_wrap">
+                <div class="verify_header">
+                    <h1 class="popup_h1">
+                        <span>请确认您的信息</span>
+                        <i class="iconfont close_dialog"></i>
+                    </h1>
+                </div>
+                <div class="verify_main">
+                    <div class="verify_content">
+                        <ul>
+                            <li>
+                                <span>投标金额:</span>
+                                <b>
+                                    <i id="verity_amount">0</i>
+                                    <i>元</i>
+                                </b>
+                            </li>
+                            <li>
+                                <span>预期收益:</span>
+                                <b>
+                                    <i id="verity_earnings">0</i>
+                                    <i>元</i>
+                                </b>
+                            </li>
+                            <li>
+                                <span>利率:</span>
+                                <b>
+                                    <i id="verity_rate">0</i>
+                                    <i>%</i>
+                                </b>
+                            </li>
+                            <li>
+                                <span>优惠:</span>
+                                <b>
+                                    <i id="verity_discount">0</i>
+                                    <i>元</i>
+                                </b>
+                            </li>
+                            <li>
+                                <span>预期总额:</span>
+                                <b>
+                                    <i id="verity_total">0</i>
+                                    <i>元</i>
+                                </b>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="verify_bg">
+                        <div class="active">
+                            <a href="javacript:void(0)">选择优惠券或加息券
+                                <span id="ticket">
+                                    <b>只能选其中之一</b>
+                                </span>
+                            </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="verify_footer">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" id="verify_think">再想想</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="verify_affirm">确认</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="lend_right">
+                <a href="lend_safety.html">安全
+                    <br>保障</a>
+                <a href="risk.html">风险
+                    <br>提示</a>
+            </div>
+    </body>
+</html>
+<script>
+    $(function () {
+        $('.lend_right a').draggable();
+        //进入页面获取到 标的的 利率、进度、 标的剩余时间（秒）、出借期限、到期时间、可投资金额
+        //以下是模拟数据
+        var get_rate1 = 21, get_percent = 90, get_second = 461072; deadline = 180, get_useable = 10000;
+
+        var selectId = null; // 定义红包或者加息券的id
+        // 4个字段的状态
+        var need_denglu_number = 1; //是否登录
+        var need_kaihu_number = 1; //是否开户
+        var need_bangka_number = 1; //是否绑卡
+        var need_password_number = 1; //是否设置交易密码
+        var options = {};
+        $('#deadline i').html(deadline);
+        $('#useable_lend').html(get_useable + '元');
+        $('#myStathalf2').attr({
+            'data-text': get_rate1 + '%',
+            'data-percent': get_percent
+        })
+
+        // 剩余的可投标进度动画图
+        addCicle(get_percent / 100);
+
+
+        $('.lend_footer .am_active').on('click', function () {
+            var price = $('#lend_bottom .lend-price').val();
+            if (price == '' || price == 0 || price > get_useable) {
+                new Dialog2('您的输入有误，请重新输入!')
+            } else if (need_denglu_number == 0) {
+                // 如果没有登录 - 提示去登陆
+                options.content = '您还没有登录';
+                options.buttonName = '去登录';
+                options.href = 'login.html';
+                hint(options)
+            } else {
+                if (need_kaihu_number == 0) {
+                    // 如果没有开户 - 提示去开户
+                    options.content = '您还没有开户';
+                    options.buttonName = '去开户';
+                    options.href = 'kaihu.html';
+                    hint(options)
+                } else if (need_bangka_number == 0) {
+                    //如果没有绑卡 - 提示去绑卡
+                    options.content = '您还没有绑卡';
+                    options.buttonName = '去绑卡';
+                    options.href = 'tube.html';
+                    hint(options)
+                } else if (need_password_number == 0) {
+                    // 如果没有设置交易密码 - 提示去交易密码
+                    options.content = '您还没有设置交易密码';
+                    options.buttonName = '设置交易密码';
+                    options.href = 'tube1.html';
+                    hint(options)
+                } else {
+                    // 所有条件都满足 可以请求是否有优惠券或者加息券
+                    // $.ajax({
+                    //     type: 'GET',
+                    //     url: 'xx',
+                    //     data: {id: xx},
+                    //     success: function(res){
+                    var res = {
+                        Arr: [
+                            {
+                                id: '1',
+                                value: '红包',
+                                childs: [
+                                    { id: '11', value: '满500减20', text: 20 },
+                                    { id: '12', value: '满5000减300', text: 300 },
+                                    { id: '13', value: '满10000减500', text: 500 }
+                                ]
+                            }, {
+                                id: '2',
+                                value: '加息券',
+                                childs: [
+                                    { id: '21', value: '2%', text: 0.02 },
+                                    { id: '22', value: '3%', text: 0.03 },
+                                    { id: '23', value: '4%', text: 0.04 }
+                                ]
+                            }
+                        ]
+                    }
+                    var earningArr = res.Arr;
+                    if (earningArr.length > 0) {
+                        // 渲染二级联动
+                        ticketFn(earningArr);
+                    } else {
+                        // 否则隐藏红包
+                        $('#lend_verify .verify_bg').hide();
+                    }
+                    //     }
+                    // })
+
+                    var earnings = $('#earnings b').html();
+                    var discount = 0;
+                    var total = Number(earnings) + Number(discount) + Number(price);
+                    $('#verity_amount').html(price);
+                    $('#verity_earnings').html(earnings);
+                    $('#verity_discount').html(discount);
+                    $('#verity_total').html(total);
+                    $('#verity_rate').html(get_rate1);
+                    openDialog();
+
+
+                    // 都满足的话，把投资金额传给后台计算收益后展示
+                    // $.ajax({
+                    //     type:'GET',
+                    //     url: 'xxx',
+                    //     data: {price: price},
+                    //     success:function(res){
+                    //         // 您的收益是多少、去支付、离开
+                    //     }
+                    // })
+                }
+            }
+        })
+        // 事件之外
+
+        $('#lend_verify .close_dialog').on('click', thinkAgain);
+        $('#verify_think').on('click', thinkAgain);
+
+        function thinkAgain(){
+            closeDialog();
+            $('.mobileSelect').detach();
+        }
+        // 确认出借
+        $('#verify_affirm').on('click', function () {
+            // $('#verity_amount').text();
+            // $('#verity_amount').text();
+        })
+        
+
+        function closeDialog() {
+            $('#lend_verify').hide();
+        }
+        function openDialog() {
+            $('#lend_verify').show();
+        }
+
+        // 提示的封装函数
+        function hint(options) {
+            var { content, buttonName, href } = options;
+            $('.public_popup .buttonName').html(buttonName).attr('href', href);
+            $('.popup_nav p').html(content);
+            $('#lend_warm').show();
+        }
+
+
+
+        // 标的剩余时间计时器
+        // 传过来剩余的秒数
+        var seconds = get_second;
+        // 进度:percent  / 100
+        var percent = 15;
+        var pers = percent / 100;
+        var timer = null;
+        function setLeftTime() {
+            // seconds = parseInt($("#hid").val(), 10);
+            timer = setInterval(showSeconds, 1000);
+        }
+
+        function showSeconds() {
+            var day1 = Math.floor(seconds / (60 * 60 * 24));
+            var hour = Math.floor((seconds - day1 * 24 * 60 * 60) / 3600);
+            var minute = Math.floor((seconds - day1 * 24 * 60 * 60 - hour * 3600) / 60);
+            var second = Math.floor(seconds - day1 * 24 * 60 * 60 - hour * 3600 - minute * 60);
+            if (day1 < 0) {
+                clearInterval(timer);
+                $("#loan_time").html("投标已经结束！");
+            } else if (pers >= 1) {
+                clearInterval(timer);
+                $("#loan_time").html("投标已经结束！");
+            } else {
+                //$("#loan_time").html(day1 + " 天 " + hour + " 小时 " + minute + " 分 " + second + " 秒");
+                $("#loan_time").html(day1 + " 天 " + hour + " 小时 " + minute + " 分 ");
+            }
+            seconds--;
+        }
+        if (pers >= 1) {
+            $("#loan_time").html("投标已经结束！");
+        } else {
+            setLeftTime();
+        }
+
+        // input keyup事件
+        $('.input-span .lend-price').keyup(function (e) {
+            var inputMoney = $(this).val();
+            var result = Number(parseInt(inputMoney) * parseInt(get_rate1) / 100 * parseInt(deadline) / 360).toFixed(2);
+            if (isNaN(result)) {
+                $('#earnings>b').html('0.00元')
+            } else {
+                $('#earnings>b').html(result)
+            }
+        })
+
+
+        // 加息券和红包
+        function ticketFn(metaData) {
+            var myArr = metaData;
+            var mobileSelcect = new MobileSelect({
+                trigger: '#ticket',
+                title: '优惠选择',
+                wheels: [{ data: metaData }],
+                callback: function (indexArr, data) {
+                    selectId = data[1].id;
+                    // console.log(selectId);
+                    var f1 = indexArr[0];
+                    var f2 = indexArr[1];
+                    // t : 所选的加息券或者红包的值
+                    var t = myArr[f1].childs[f2].text;
+                    // 投标金额: get_amount
+                    // 预期收益: get_earnings
+                    // 利率: get_rate
+                    // 优惠: get_discount
+                    // 预期总额:get_total
+                    var get_amount = $('#verity_amount').text();
+                    var get_earnings = $('#verity_earnings').text();
+                    var get_rate = $('#verity_rate').text();
+                    var get_discount = $('#verity_discount').text();
+                    var get_total = $('#verity_total').text();
+
+                    // 大于1 就是用的是红包
+                    var new_total;
+                    if (t > 1) {
+                        $('#verity_discount').html(t);
+                        new_total = Number(parseInt(get_amount) * parseInt(get_rate) / 100 * parseInt(deadline) / 360).toFixed(2);
+                        $('#verity_rate').html(get_rate1);
+                        $('#verity_total').html((Number(new_total) + parseInt(get_amount) + t).toFixed(2));
+                        // 小于1 使用的是加息券
+                    } else {
+                        var addRate = t * 100 + Number(get_rate1);
+                        var addResult = Number(parseInt(get_amount) * parseInt(addRate) / 100 * parseInt(deadline) / 360).toFixed(2);
+                        $('#verity_discount').html(0);
+                        $('#verity_earnings').html(addResult)
+                        $('#verity_rate').html(addRate);
+                        $('#verity_total').html((Number(addResult) + parseInt(get_amount)).toFixed(2));
+                    }
+                }
+            })
+        }
+
+
+        // progresssBar.js实现
+        function addCicle(num){
+            var bar = new ProgressBar.SemiCircle('#container', {
+                strokeWidth: 5,
+                color: '#FFEA82',
+                trailColor: '#eee',
+                trailWidth: 0,
+                easing: 'easeInOut',
+                duration: 1400,
+                svgStyle: null,
+                text: {
+                    value: '',
+                    alignToBottom: false
+                },
+                from: { color: '#F7D727' },
+                to: { color: '#FF401A' },
+                step: (state, bar) => {
+                    bar.path.setAttribute('stroke', state.color);
+                }
+            });
+            bar.animate(num);  // Number from 0.0 to 1.0
+        }
+    })
+</script>

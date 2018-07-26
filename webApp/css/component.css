@@ -1,0 +1,47 @@
+/* by LiuZhe in 2018/7/6 */
+.dialog-oy{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5)
+}
+.dialog-oy .dialog-oy-wrap{
+    width: 75vw;
+    margin: 30vh auto;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.dialog-oy-wrap .dialog-oy-header{
+    background: #ff3919;
+    color: #fff;
+    padding: 0 20px;
+    line-height: 42px;
+    font-size: 12px;
+}
+.dialog-oy-wrap .dialog-oy-main{
+    line-height: 40px;
+    margin: 20px 0;
+    text-align: center;
+}
+.dialog-oy-wrap .dialog-oy-footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.dialog-oy-footer button{
+    background: #ff3919;
+    color: #fff;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: block;
+    outline: none;
+    border: none;
+}

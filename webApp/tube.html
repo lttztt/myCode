@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+<link type="text/css" rel="stylesheet" href="css/public.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/mobileSelect.css">
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/mobileSelect.js" type="text/javascript"></script>
+<script src="js/my.js" type="text/javascript"></script>
+<title>未知</title>
+<body>
+<section>
+    <div class="tube">
+        <form action="">
+            <ul>
+                <li>
+                    <span>开户城市</span>
+                    <span class="am_fr" id="city">请选择城市</span>
+                </li>
+                <li>
+                    <span>银行选择</span>
+                    <span class="am_fr" id="bank">请选择银行</span>
+                </li>
+                <li>
+                    <span>银行卡卡号</span>
+                    <input type="text" placeholder="请输入您的银行卡卡号">
+                </li>
+                <li>
+                    <span>银行预留手机号</span>
+                    <input type="text" placeholder="请输入银行预留手机号">
+                </li>
+                <li>
+                    <input class="am_fl" type="text" placeholder="请填写您收到的验证码">
+                    <a href="javascript:void(0);">发送手机验证码</a>
+                    <a style="display:none;" class="none" href="javascript:void(0);">时间（180s）</a>
+                </li>
+                <p><i>*</i>请绑定持卡人本人银行卡</p>
+            </ul>
+        </form>
+    </div>
+    <div class="footer_button">
+        <a href="#">完成</a>
+    </div>  
+</section>  
+
+<script type="text/javascript">
+
+
+
+var UplinkData =
+[
+    {id:'1',value:'兰博基尼'},
+    {
+        id:'2',
+        value:'劳斯莱斯',
+        childs:[
+            {
+                id:'1',
+                value:'曜影'
+            },
+            {
+                id:'2',
+                value:'幻影',
+                childs:[
+                    {
+                        id:'1',
+                        value:'标准版'
+                    },
+                    { 
+                        id:'2',
+                        value:'加长版'
+                    },
+                    { 
+                        id:'3',
+                        value:'巅峰之旅'
+                    },
+                    { 
+                        id:'4',
+                        value:'流光熠世'
+                    },
+                    { 
+                        id:'5',
+                        value:'都会典藏版'
+                    } 
+                ]
+            },
+            {
+                id:'3',
+                value:'古思特',
+                childs:[
+                    {
+                        id:'1',
+                        value:'加长版'
+                    },
+                    {
+                        id:'2',
+                        value:'永恒之爱'
+                    },
+                    { 
+                        id:'3',
+                        value:'英骥'
+                    },
+                    { 
+                        id:'4',
+                        value:'阿尔卑斯典藏版'
+                    }
+                ]
+            },
+            {
+                id:'4',
+                value:'魅影',
+                childs:[
+                    {
+                        id:'1',
+                        value:'标准版'
+                    },
+                    {
+                        id:'2',
+                        value:'Black Badge'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id:'3',
+        value:'宾利',
+        childs:[
+            {
+                id:'1',
+                value:'慕尚',
+                childs:[
+                    {
+                        id:'1',
+                        value:'标准版'
+                    },
+                    {
+                        id:'2',
+                        value:'极致版'
+                    }
+                ]
+            },
+            { 
+                id:'2',
+                value:'欧陆',
+                childs:[
+                    {
+                        id:'1',
+                        value:'尊贵版'
+                    },
+                    {
+                        id:'2',
+                        value:'敞篷标准版'
+                    },
+                    {
+                        id:'3',
+                        value:'敞篷尊贵版'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id:'4',
+        value:'法拉利',
+        childs:[
+            {
+                id:'1',
+                value:'LaFerrari'
+            },
+            {
+                id:'2',
+                value:'法拉利488'
+            },
+            {
+                id:'3',
+                value:'GTC4Lusso'
+            }
+        ]
+    },
+    {
+        id:'5',
+        value:'玛莎拉蒂',
+        childs:[
+            {
+                id:'1',
+                value:'总裁'
+            },
+            {
+                id:'2',
+                value:'玛莎拉蒂GT'
+            },
+            {
+                id:'3',
+                value:'Levante'
+            }
+        ]
+    }
+];
+
+var mobileSelect5 = new MobileSelect({
+    trigger: '#city',
+    title: '车型选择',
+    wheels: [
+                {data : UplinkData}
+            ],
+    transitionEnd:function(indexArr, data){
+        console.log(data);
+    },
+    callback:function(indexArr, data){
+        console.log(data);
+    } 
+});
+var UplinkData1 =
+[
+    {id:'1',value:'兰博基尼'},
+    {
+        id:'2',
+        value:'劳斯莱斯',
+        childs:[
+            {
+                id:'1',
+                value:'曜影'
+            },
+            {
+                id:'2',
+                value:'幻影',
+                childs:[
+                    {
+                        id:'1',
+                        value:'标准版'
+                    },
+                    { 
+                        id:'2',
+                        value:'加长版'
+                    },
+                    { 
+                        id:'3',
+                        value:'巅峰之旅'
+                    },
+                    { 
+                        id:'4',
+                        value:'流光熠世'
+                    },
+                    { 
+                        id:'5',
+                        value:'都会典藏版'
+                    } 
+                ]
+            },
+            {
+                id:'3',
+                value:'古思特',
+                childs:[
+                    {
+                        id:'1',
+                        value:'加长版'
+                    },
+                    {
+                        id:'2',
+                        value:'永恒之爱'
+                    },
+                    { 
+                        id:'3',
+                        value:'英骥'
+                    },
+                    { 
+                        id:'4',
+                        value:'阿尔卑斯典藏版'
+                    }
+                ]
+            },
+            {
+                id:'4',
+                value:'魅影',
+                childs:[
+                    {
+                        id:'1',
+                        value:'标准版'
+                    },
+                    {
+                        id:'2',
+                        value:'Black Badge'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id:'3',
+        value:'宾利',
+        childs:[
+            {
+                id:'1',
+                value:'慕尚',
+                childs:[
+                    {
+                        id:'1',
+                        value:'标准版'
+                    },
+                    {
+                        id:'2',
+                        value:'极致版'
+                    }
+                ]
+            },
+            { 
+                id:'2',
+                value:'欧陆',
+                childs:[
+                    {
+                        id:'1',
+                        value:'尊贵版'
+                    },
+                    {
+                        id:'2',
+                        value:'敞篷标准版'
+                    },
+                    {
+                        id:'3',
+                        value:'敞篷尊贵版'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id:'4',
+        value:'法拉利',
+        childs:[
+            {
+                id:'1',
+                value:'LaFerrari'
+            },
+            {
+                id:'2',
+                value:'法拉利488'
+            },
+            {
+                id:'3',
+                value:'GTC4Lusso'
+            }
+        ]
+    },
+    {
+        id:'5',
+        value:'玛莎拉蒂',
+        childs:[
+            {
+                id:'1',
+                value:'总裁'
+            },
+            {
+                id:'2',
+                value:'玛莎拉蒂GT'
+            },
+            {
+                id:'3',
+                value:'Levante'
+            }
+        ]
+    }
+];
+
+var mobileSelect5 = new MobileSelect({
+    trigger: '#bank',
+    title: '车型选择',
+    wheels: [
+                {data : UplinkData1}
+            ],
+    transitionEnd:function(indexArr, data){
+        console.log(data);
+    },
+    callback:function(indexArr, data){
+        console.log(data);
+    } 
+});
+
+
+</script>
+</body>
+</html>

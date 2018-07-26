@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+<link type="text/css" rel="stylesheet" href="css/public.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/jQuery.textSlider.js" type="text/javascript"></script>
+<script src="js/hhSwipe.js" type="text/javascript"></script>
+<script src="js/my.js" type="text/javascript"></script>
+<script src="js/component.js" type="text/javascript"></script>
+<title>收益计算器</title>
+<body>
+<div class="number_input">
+    <ul>
+        <li>
+            <span>出借金额</span>
+            <input id="text1" type="text">
+            <i>元</i>
+        </li>
+        <li>
+            <span>投入时长</span>
+            <input id="text2" type="text">
+            <i>天</i>
+        </li>
+        <li>
+            <span>年化利率</span>
+            <input id="text3" type="text">
+            <i>%</i>
+        </li>
+        <li>
+            <span>还款方式</span>
+            <select name="" id="">
+                <option value="">请选择您的还款方式</option>
+                <option value="">本息还款</option>
+            </select>
+        </li>
+    </ul>
+</div>
+<div class="number_result">
+    <span>计算结果</span>
+    <p class="one">本息总计：<i>￥0.00</i></p>
+    <p class="two">应收利息：<i>￥0.00</i></p>
+</div>
+<div class="footer_button">
+    <a id="submit" href="javascript:void(0);">计算收益</a>
+</div>
+<script>
+    var oText = document.getElementById('text1');
+    var oText2 =document.getElementById('text2');
+    var oText3 =document.getElementById('text3');
+    var oBtn =document.getElementById('submit');
+    oBtn.onclick = function(){
+        var num = (parseFloat(oText.value)*parseFloat(oText2.value)/100*parseFloat(oText3.value)/360).toFixed(2);
+        var number = (parseFloat(oText.value)*parseFloat(oText2.value)/100*parseFloat(oText3.value)/360+parseFloat(oText.value)).toFixed(2);
+         if (isNaN(num)) {
+            new Dialog2('您输入有错')
+        }else{
+            $(".number_result p.two i").html(num);
+            $(".number_result p.one i").html(number);
+        };
+    }
+</script>
+</body>
+</html>

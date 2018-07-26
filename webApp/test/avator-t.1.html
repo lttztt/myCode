@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>avator-t</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .content-img {
+            border: 3px solid gray;
+
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .content-img-a{
+            border-radius: 50%;
+        }
+
+        .visibility{
+            width: 100px;
+            height: 50px;;
+            padding: 20px;
+            visibility: hidden;
+            border: 1px solid red;
+        }
+        .visibility .children{
+            padding: 3px;
+            border: 1px solid gray;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="content-img-a">
+            <img src="../images/company_img.jpg" width="200" height="200">
+        </div>
+        <br>
+        <div class="content-img">
+            <img src="avator.png" width="200" height="200">
+        </div>
+    </div>
+
+    <div class="visibility">
+        父亲
+        <div class="children">
+            儿子
+        </div>
+    </div>
+    <p>其他的</p>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        // $('.content-img img').on('load',function(){
+        //     var $w = $(this).width();
+        //     var $h = $(this).height();
+        //     $(this).parent().height($h).width($w)
+        // })
+    })
+</script>

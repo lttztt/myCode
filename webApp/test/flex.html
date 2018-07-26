@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .test {
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .test li {
+            /* width: 25%; */
+            flex: 1;
+            text-align: center;
+            font-size: 16px;
+            border-right: 1px solid gray;
+            border-top: 1px solid #88D1F1;
+            padding: 4px;
+        }
+
+        .test li:last-child {
+            border-right: none;
+            flex: 2;
+            background: #88D1F1;
+            color: white;
+        }
+        .red{
+            color: red;
+        }
+
+        .iconfont {
+            font-size: 24px;
+        }
+
+        .test span,
+        .test i {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="test">
+        <li>
+            <i class="iconfont">&#xe78b;</i>
+            <span>账单</span>
+        </li>
+        <li>
+            <i class="iconfont">&#xe602;</i>
+            <span>账单</span>
+        </li>
+        <li>
+            <i class="iconfont">&#xe68e;</i>
+            <span>账单</span>
+        </li>
+
+    </ul>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>

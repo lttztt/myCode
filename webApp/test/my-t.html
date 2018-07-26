@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="../font/iconfont.css">
+<link type="text/css" rel="stylesheet" href="../css/public.css" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/my.js" type="text/javascript"></script>
+<title>个人中心</title>
+<body>
+<section>
+    <div class="my_top">
+        <div class="head_top">
+            <div class="head_before am_cl">
+                <a class="am_fl" href="bill.html">
+                    <i class="iconfont">
+                        &#xe78b;
+                    </i>
+                    账单
+                </a>
+                <a class="am_fr" href="my_inform.html">
+                    <i class="iconfont">
+                        &#xe608;
+                    </i>
+                </a>
+            </div>
+            <div class="head_after">
+                <div class="head_text">
+                    <img src="avator.png" alt="">
+                     <p class="phone_num">182***0000</p>
+                     <p>总资产：￥<span>0.00</span></p> 
+                </div>
+                 <div class="head_bottom">
+                    <span>代收本金：￥<i>0.00</i></span>
+                    <span>代收利息：￥<i>0.00</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="head_footer">
+                    <a href="recharge.html">充值</a> 
+                    <a class="have" href="withdraw.html">提现</a>
+                </div>
+        <div class="head_middle public_ul">
+            <ul>
+                <li>
+                    <p>总收益：<span>0.00</span></p>
+                </li>
+                 <li> 
+                    <p>可用余额：<span>0.00</span></p>
+                </li>
+                 <li>
+                    <p>冻结资金：<span>0.00</span></p>
+                </li>
+            </ul>
+        </div>
+       
+    </div>
+    <div class="my_middle public_ul">
+        <ul>
+            <li>
+                <a href="my_bill.html">
+                    <i class="iconfont">&#xe602;</i>
+                    <p>我的出借</p>
+                </a>
+            </li>
+            <li>
+                <a href="red_bg.html">
+                    <i class="iconfont">&#xe68e;</i>
+                    <p>我的福利</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <i class="iconfont">&#xe60a;</i>
+                    <p>我的推广</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="my_bottom">
+        <ul>
+            <li>
+                <a href="javascript:void(0)">
+                    <i class="iconfont">&#xe67c;</i>
+                    <span>我的体验金</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <i class="iconfont">&#xe634;</i>
+                    <span>充值提现记录</span>
+                </a>
+            </li>
+            <li>
+                <a href="number_shushu.html">
+                    <i class="iconfont">&#xe657;</i>
+                    <span>收益计算</span>
+                </a>
+            </li>
+            <li>
+                <a href="people.html">
+                    <i class="iconfont">&#xe655;</i>
+                    <span>人脉统计</span>
+                </a>
+            </li>
+            <li>
+                <a href="safety.html">
+                    <i class="iconfont">&#xeaa7;</i>
+                    <span>安全中心</span>
+                </a>
+            </li>
+             <li>
+                <a href="help.html">
+                    <i class="iconfont">&#xe7e6;</i>
+                    <span>帮助中心</span>
+                </a>
+            </li>
+            <li>
+                <a href="news.html">
+                    <i class="iconfont">&#xe640;</i>
+                    <span>平台公告</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <i class="iconfont">&#xe625;</i>
+                    <span>QQ客服</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="my_footer">
+        <a href="javascript:void(0);">退出</a>
+        <span>客服热线：400-816-8613</span>
+    </div>
+</section>
+<footer>
+  <ul>
+    <li>
+      <a href="index.html">
+        <i class="iconfont">&#xe6a5;</i>
+        <p>首页</p>
+      </a>
+    </li>
+    <li>
+      <a href="land_list.html">
+        <i class="iconfont">&#xe603;</i>
+        <p>出借</p>
+      </a>
+    </li>
+    <li class="am_active">
+      <a href="javascript:void(0)">
+        <i class="iconfont">&#xe63f;</i>
+        <p>我的</p>
+      </a>
+    </li>
+  </ul>
+</footer>
+</body>
+</html>
+<script>
+    $(function(){
+        var phone = '15890123512';
+        var res_phone = format_phone(phone);
+        // 处理手机号
+        $('.head_text .phone_num').html(res_phone)
+
+
+        // 格式化手机号
+        function format_phone(num){
+            if(typeof num === 'number'){
+                num = num.toString()
+            }
+            return num.replace(/(\d{3})\d{4}(\d{4})/,"$1****$2");
+        }
+        // 格式化金钱 100 > ￥100.00 / 100.00
+        function format_num(num, symbol) {
+            if (typeof num === 'string') {
+                num = Number(num);
+            }
+            if (symbol) {
+                return symbol + num.toFixed(2)
+            } else {
+                return num.toFixed(2)
+            }
+        }
+        // 格式化身份证号码，传进来字符串。否则失准
+        function format_id(idCard){
+            return idCard.replace(/(\d{4})\d{10}(\d{4})/,"$1****$2");
+        }
+    })
+</script>
