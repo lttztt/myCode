@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字增加</title>
+</head>
+
+<body>
+    <span id="count-number">0</span>
+    <div>
+        <h2>使用：</h2>
+        <p>var run = new Run({ <br>
+            el: '#count-number', <br>
+            duration: 2000, <br>
+            final: 12848, <br>
+            speed: 20 <br>
+        })</p>
+        <span>解释：</span>
+        <p>el: 作用的html对象</p>
+        <p>duration: 数字变动总时间</p>
+        <p>final: 数字变动的最终值</p>
+        <p>speed: 数字多久加一次</p>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        // function Run(options) {
+        //     let { el, speed, to, up } = options;
+        //     el = $(el);
+        //     // 用时 / 间隔 
+        //     let loops = Math.ceil(speed / up);
+        //     // 每次加多少
+        //     let increment = parseInt(to / loops);
+        //     let num = 0;
+        //     var timer = setInterval(() => {
+        //         num += increment;
+        //         el.html(num)
+        //         if (num >= to) {
+        //             clearInterval(timer);
+        //             el.html(to);
+        //         }
+        //     }, up)
+        // }
+        class Run {
+            constructor({el,duration,final,speed} = options) {
+                this.el = $(el);
+                this.duration = duration;
+                this.final = final;
+                this.speed = speed;  
+                this.init();
+            }
+            init() {
+                let loops = Math.ceil(this.duration / this.speed);
+                // 每次加多少
+                let increment = parseInt(this.final / loops);
+                let start = 0;
+                let timer = setInterval(() => {
+                    start += increment;
+                    // this.el.html(start)
+                    this.el.html(this.formatter(start))
+
+                    if (start >= this.final) {
+                        clearInterval(timer);
+                        this.el.html(this.formatter(this.final));
+                    }
+                }, this.speed)
+            }
+            formatter(value){
+                var value = value + '';
+                return value.replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+            }
+        }
+
+        var run = new Run({ el: '#count-number', duration: 2000, final: 12848, speed: 20 })
+    })
+</script>
