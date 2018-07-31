@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*obj 概率对象数组;
+luck 概率数组，即obj数组元素意义对应;
+对于给定的概率对象，该函数可简化如下：
+var a = ['一等奖：宝马X6', '二等奖：苹果三件套', '三等奖：威戈背包', '继续努力！'];
+var b = [1, 10, 100, 500];
+function goodluck(a, b) {
+    var random = (1 + 10 + 100 + 500) * Math.random();
+    if(random <= 500) return a[3];
+    else if(random <= 600) return a[2];
+    else if(random <= 610) return a[1];
+    else return a[0];
+};
+console.log(goodluck(a, b));
+*/
+
+function goodluck(obj, luck) {
+    var sum = 0,
+        factor = 0,
+        random = Math.random();
+
+    for(var i = luck.length - 1; i >= 0; i--) {
+        sum += luck[i]; // 统计概率总和
+    };
+    random *= sum; // 生成概率随机数
+    for(var i = luck.length - 1; i >= 0; i--) {
+        factor += luck[i];
+        if(random <= factor) return obj[i];
+    };
+    return null;
+};
+
+var a = ['感谢参与', '5元红包', '再来一次', '水晶杯', '5元话费', '茶具'];
+var b = [20, 50, 10, 10, 9.9 ,0.1];
+
+var x1 = 0, x2 = 0, x3 = 0, x4 = 0, x5 = 0, x6 = 0;
+// for(let i = 0; i < 100; i++){
+// 	let result = goodluck(a, b);
+// 	if(result == '感谢参与'){
+// 		x1++;
+// 	}else if(result == '5元红包'){
+// 		x2++;
+// 	}else if(result == '再来一次'){
+// 		x3++;
+// 	}else{
+// 		x4++;
+// 	}
+// }
+// console.log('感谢参与= ' + x1);
+// console.log('5元红包= ' + x2);
+// console.log('再来一次= ' + x3);
+// console.log('水晶杯= ' + x4);
+// for(let i = 0; i < 100; i++){
+for(let i = 0; i < 100; i++){
+	let result = goodluck(a, b);
+	if(result == '感谢参与'){
+		x1++;
+	}else if(result == '5元红包'){
+		x2++;
+	}else if(result == '再来一次'){
+		x3++;
+	}else if(result == '水晶杯'){
+		x4++;
+	}else if(result == '5元话费'){
+		x5++;
+	}else{
+		x6++;
+	}
+}
+console.log('感谢参与= ' + x1);
+console.log('5元红包= ' + x2);
+console.log('再来一次= ' + x3);
+console.log('水晶杯= ' + x4);
+console.log('5元话费= ' + x5);
+console.log('茶具= ' + x6);
+</script>
