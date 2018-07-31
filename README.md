@@ -1,2 +1,3 @@
-# myCode
-This is my first repository in gitHub. creat by 2017/3/21
+# 个人平时的积累
+> gitHub创建了很久缺没能好好利用
+> 要坚持利用它记录
