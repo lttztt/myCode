@@ -7,16 +7,16 @@ body,html{width:100%;background-color:#fddfad}
 .top_banner img{width:100%}
 .main{background-image:url(../images/bg_main.png);background-repeat:no-repeat;background-size:100% 100%;position:relative}
 .main .lottery{width:100%;margin-top:-5px}
-.lottery .lottery_title{padding:10px;text-align:center;color:#fff;font-weight:700;letter-spacing:1px}
+.lottery .lottery_title{padding:10px;text-align:center;color:#fff;font-weight:700;letter-spacing:1px;font-size: 16px;}
 .lottery_dish{position:relative;text-align:center;overflow:hidden}
 .lottery_dish .lottery_pointer{position:absolute;width:130px;top:33%;left:50%;transform:translate(-50%);z-index:10}
 /* 按钮 */
-.lottery .lottery_buttons{width:100%;z-index:15;padding-bottom:30px}
+.lottery .lottery_buttons{width:300px;margin: 0 auto;z-index:15;padding-bottom:30px}
 .lottery_buttons ul{list-style-type:none;display:flex;justify-content:space-around;align-items:center;text-align:center;}
 .lottery_buttons .relative_li{flex:1;position:relative}
 .lottery_buttons img{height:50px}
 .relative_li img{position:absolute;top:50%;left:50%;transform:translate(-50%)}
-.lottery_span{color:#fff;position:absolute;right:18%;top:15px;z-index:20;font-size:14px}
+.lottery_span{color:#fff;position:absolute;right:14%;top:15px;z-index:20;font-size:14px}
 .hidden_btn{display:none}
 #go.lottery_active{display:block}
 #go2.lottery_active{display:block}

@@ -1,7 +1,7 @@
 // 定义变量
 var go1Flag = false, go2Flag = false, angles = [240, 180, 120, 60, 0, 300];
 // 需要渲染的变量(幸运抽奖、每日抽奖、是否登录、是否过期)
-var luck_times = 5, every_times = 1,isLogin = true, overdue = false;
+var luck_times = 0, every_times = 1,isLogin = true, overdue = false;
 
 var _lottery = {
   title: [], //奖品名称
