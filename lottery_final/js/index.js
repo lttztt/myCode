@@ -7,8 +7,8 @@ var _lottery = {
   title: [], //奖品名称
   colors: [], //奖品区块对应背景颜色
   endColor: "#FF5B5C", //中奖后区块对应背景颜色
-  outsideRadius: 170, //外圆的半径
-  insideRadius: 30, //内圆的半径
+  outsideRadius: 150, //外圆的半径
+  insideRadius: 20, //内圆的半径
   textRadius: 105, //奖品位置距离圆心的距离
   startAngle: 0, //开始角度
   isLock: false //false:停止; true:旋转
@@ -55,7 +55,7 @@ function drawLottery(lottery_index) {
     ctx.clearRect(0, 0, w, h); //在给定矩形内清空一个矩形
     // 外圆背景
     ctx.beginPath();
-    var bg_radius = 180;
+    var bg_radius = 160;
     ctx.arc(w / 2, h / 2, bg_radius, 0, 360, false);
     ctx.fillStyle = "#FBCB7E";
     ctx.fill();
@@ -82,9 +82,9 @@ function drawLottery(lottery_index) {
       //添加对应图标
       var img = $img[i];
       img.onload = function() {
-        ctx.drawImage(img, -36, -60, 70, 80);
+        ctx.drawImage(img, -32, -40, 60, 70);
       };
-      ctx.drawImage(img, -36, -60, 70, 80);
+      ctx.drawImage(img, -32, -40, 60, 70);
       ctx.restore(); //把当前画布返回（调整）到上一个save()状态之前
       //----绘制奖品结束----
     }
