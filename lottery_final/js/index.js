@@ -12,8 +12,8 @@ var _lottery = {
 };
 _lottery.title = ["再来一次", "5元话费", "5元红包", "谢谢参与", "水晶杯", "茶具"];
 _lottery.colors = ["#A2EDF8", "#F0FBFC", "#A2EDF8", "#F0FBFC", "#A2EDF8", "#F0FBFC"];
-var b1 = [4, 0, 55, 40, 1, 0];
-var b2 = [10, 9.9, 50, 20, 10, 0.1];
+var b1 = [40, 0, 0, 10, 1, 0];
+var b2 = [60, 9.9, 0, 0, 0, 0.1];
 
 // 处理按钮的逻辑
 $(".lottery_buttons ul").hide();
@@ -95,7 +95,7 @@ var rotateFn = function(item, angles, txt) {
   $lottery.rotate({
     angle: 0,
     animateTo: angles + 1800,
-    duration: 1000,
+    duration: 2000,
     callback: function() {
       _lottery.isLock = !_lottery.isLock;
       drawLottery(item);
@@ -105,15 +105,23 @@ var rotateFn = function(item, angles, txt) {
       } else {
         $dialog.show().find(".modal2").show().find(".modal_text span").text(txt);
       }
-      // 如果是再抽一次
-      if (item == 0) {
+      // 如果是再抽一次 且为 每日抽奖
+      if(go1Flag && item == 0){
+        every_times++;
+        console.log(1)
+      }
+      // 且为 幸运抽奖
+      if (go2Flag&& item == 0) {
         luck_times++;
       }
       if (go1Flag && item !== 0) {
         $("#go").hide();
         every_times = 0;
         go1Flag = false;
+      }else if(go1Flag){
+        go1Flag = false;
       }
+
       if (go2Flag && luck_times > 1) {
         luck_times--;
         $(".relative_li .lottery_times").text(luck_times);
