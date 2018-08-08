@@ -37,10 +37,11 @@ window.onload = function() {
   document.getElementById("lotterys").width = w;
   drawLottery();
   $(".relative_li .lottery_times").text(luck_times);
-  if (luck_times == 0) {
+  if (luck_times <= 0) {
     $("#go2").hide();
+    $(".relative_li .lottery_times").text(0);
   }
-  if (every_times == 1) {
+  if (every_times >= 1) {
     $("#go").hide();
   }
 };
