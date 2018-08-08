@@ -1,8 +1,5 @@
 // 定义变量
 var go1Flag = false, go2Flag = false, angles = [240, 180, 120, 60, 0, 300];
-// 需要渲染的变量(幸运抽奖、每日抽奖、是否登录、是否过期)
-var luck_times = 0, every_times = 1,isLogin = true, overdue = false;
-
 var _lottery = {
   title: [], //奖品名称
   colors: [], //奖品区块对应背景颜色
@@ -20,9 +17,9 @@ var b2 = [10, 9.9, 50, 20, 10, 0.1];
 
 // 处理按钮的逻辑
 $(".lottery_buttons ul").hide();
-if (isLogin == false) {
+if (isLogin == 0) {
   $(".lottery_buttons .noLogin_status").show();
-} else if (overdue == true) {
+} else if (overdue == 0) {
   $(".lottery_buttons .finish_status").show();
 } else {
   $(".lottery_buttons .normal_status").show();
@@ -43,7 +40,7 @@ window.onload = function() {
   if (luck_times == 0) {
     $("#go2").hide();
   }
-  if (every_times == 0) {
+  if (every_times == 1) {
     $("#go").hide();
   }
 };
@@ -98,7 +95,7 @@ var rotateFn = function(item, angles, txt) {
   $lottery.rotate({
     angle: 0,
     animateTo: angles + 1800,
-    duration: 6000,
+    duration: 1000,
     callback: function() {
       _lottery.isLock = !_lottery.isLock;
       drawLottery(item);
@@ -133,7 +130,8 @@ var rotateFn = function(item, angles, txt) {
 function getRecord(item, type) {
   var txt = item;
   if (txt == undefined) {
-    $.get('/hd/getHdRecord',function(response){
+    var response = {state: 1, info: '<li><span>2018-08-08 10:22</span><span>谢谢参与</span></li>'};
+    // $.get('/hd/getHdRecord',function(response){
       if (response.state == 1) {
         $(".modal1 .dialog_ul").html(response.info);
         $dialog.find(".main_words").hide();
@@ -141,16 +139,17 @@ function getRecord(item, type) {
       } else {
         showToast("请先登录!");
       }
-    })
+    // })
   } else {
-    $.post("/hd/saveHdRecord", { txt: txt, type: type}, function(result) {
+    var result = {state : 1}
+    // $.post("/hd/saveHdRecord", { txt: txt, type: type}, function(result) {
       if (result.state == 0) {
         showToast("请先登录!");
       } else if (result.state == 1) {
         drawLottery();
         rotateFn(item, angles[item], _lottery.title[item]);
       }
-    });
+    // });
   }
 }
 // 每日抽奖、幸运抽奖、抽奖记录、关闭弹窗
