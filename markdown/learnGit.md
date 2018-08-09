@@ -285,5 +285,7 @@ $ git stash pop
 ```bash
 # 生成一个可供发布的压缩包
 $ git archive
+# 生成一个可供发布的压缩包
+$ git archive
 ```
 > 以上常用命令来自阮一峰老师的博客文章《常用 Git 命令清单》，感谢阮老师！
