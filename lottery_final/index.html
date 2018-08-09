@@ -12,13 +12,10 @@
     // every_times 每日抽奖 1 代表已抽过
     // isLogin 已登录 1 代表已登录 0 代表未登录
     // overdue 是否过期 1 代表未过期 0 代表过期
-<<<<<<< HEAD
-  	var luck_times = -1, every_times = 0,isLogin = 1, overdue = 1;
-=======
-  	var luck_times = 1, every_times = 0,isLogin = 0, overdue = 1;
->>>>>>> 6825db15c903c6ef99b189541ab69d9e12f5c167
+    var luck_times = 1, every_times = 0, isLogin = 0, overdue = 1;
   </script>
 </head>
+
 <body>
   <!-- 隐藏的图 -->
   <div class="hiddenImg">
@@ -49,7 +46,9 @@
               <img src="images/ereyday.png" id="go" class="lottery_active hidden_btn">
             </li>
             <li class="relative_li">
-              <span class="lottery_span"><b class="lottery_times"></b></span>
+              <span class="lottery_span">
+                <b class="lottery_times"></b>
+              </span>
               <img src="images/lunck_none.png">
               <img src="images/lunck.png" id="go2" class="lottery_active hidden_btn">
             </li>
@@ -61,17 +60,17 @@
             <li>
               <img src="images/game_over.png">
             </li>
-              <li>
-                  <img src="images/jilu.png" class="jilu">
-                </li>
+            <li>
+              <img src="images/jilu.png" class="jilu">
+            </li>
           </ul>
           <ul class="noLogin_status">
-              <li>
-                <a href="#" style="display: block;">
-                    <img src="images/no_login.png">
-                </a>
-              </li>
-            </ul>
+            <li>
+              <a href="/pub/login.html" style="display: block;">
+                <img src="images/no_login.png">
+              </a>
+            </li>
+          </ul>
         </div>
     </div>
     <div class="lottery_explain">
@@ -98,7 +97,6 @@
     </div>
     <div class="invited_flow">
       <img src="images/flow.png" class="flow_img">
-      <a href="#" class="flow_button"></a>
     </div>
     <div class="service_tel">
       <p>客服热线:400-816-8613</p>
@@ -124,22 +122,27 @@
           <span class="title_name">恭喜你</span>
         </div>
         <ul class="dialog_ul">
-          <div class="modal_text">恭喜你,获得<span></span></div>
+          <div class="modal_text">恭喜你,获得
+            <span></span>
+          </div>
         </ul>
       </div>
       <div class="main_words modal3">
-          <div class="words_title">
-            <span class="title_name">很遗憾</span>
-          </div>
-          <ul class="dialog_ul">
-              <div class="modal_text"><span></span></div>
-          </ul>
+        <div class="words_title">
+          <span class="title_name">很遗憾</span>
         </div>
-    </div> 
+        <ul class="dialog_ul">
+          <div class="modal_text">
+            <span></span>
+          </div>
+        </ul>
+      </div>
+    </div>
   </div>
   </div>
   <script src="js/zepto.min.js"></script>
   <script src="js/zepto.rotate.min.js"></script>
   <script src="js/index.js"></script>
 </body>
+
 </html>
