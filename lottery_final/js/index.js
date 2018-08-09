@@ -12,8 +12,8 @@ var _lottery = {
 };
 _lottery.title = ["再来一次", "5元话费", "5元红包", "谢谢参与", "水晶杯", "茶具"];
 _lottery.colors = ["#A2EDF8", "#F0FBFC", "#A2EDF8", "#F0FBFC", "#A2EDF8", "#F0FBFC"];
-var b1 = [40, 0, 0, 10, 1, 0];
-var b2 = [60, 9.9, 0, 0, 0, 0.1];
+var b1 = [4, 0, 55, 40, 1, 0];
+var b2 = [10, 9.9, 50, 20, 10 ,0.1];
 
 // 处理按钮的逻辑
 $(".lottery_buttons ul").hide();
@@ -44,6 +44,10 @@ window.onload = function() {
   if (every_times >= 1) {
     $("#go").hide();
   }
+  $('.relative_li .no_times').on('click',function(){
+    $dialog.show().find('.main_words').hide();
+    $dialog.find('.modal4').show();
+  })
 };
 
 // 画转盘

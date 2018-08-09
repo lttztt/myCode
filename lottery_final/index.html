@@ -12,7 +12,7 @@
     // every_times 每日抽奖 1 代表已抽过
     // isLogin 已登录 1 代表已登录 0 代表未登录
     // overdue 是否过期 1 代表未过期 0 代表过期
-    var luck_times = 1, every_times = 0, isLogin = 0, overdue = 1;
+    var luck_times = 0, every_times = 0, isLogin = 1, overdue = 1;
   </script>
 </head>
 
@@ -42,14 +42,14 @@
         <div class="lottery_buttons">
           <ul class="normal_status">
             <li class="relative_li">
-              <img src="images/ereyday_none.png">
+              <img src="images/ereyday_none.png" class="no_times">
               <img src="images/ereyday.png" id="go" class="lottery_active hidden_btn">
             </li>
             <li class="relative_li">
               <span class="lottery_span">
                 <b class="lottery_times"></b>
               </span>
-              <img src="images/lunck_none.png">
+              <img src="images/lunck_none.png" class="no_times">
               <img src="images/lunck.png" id="go2" class="lottery_active hidden_btn">
             </li>
             <li class="relative_li">
@@ -135,6 +135,16 @@
           <div class="modal_text">
             <span></span>
           </div>
+        </ul>
+      </div>
+      <div class="main_words modal4">
+        <div class="words_title">
+          <span class="title_name">没有抽奖次数</span>
+        </div>
+        <ul class="dialog_ul">
+          <li>
+            <p>单笔投资每满1万元增加一次抽奖</p>
+          </li>
         </ul>
       </div>
     </div>
