@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>少数派</title>
+  <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="sspai.css">
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+      <a href="#" class="logo"><span>少数派</span></a>
+      <div class="console">
+          <a href="#" class="i-write">
+            <img src="./images/i-write.png">
+          </a>
+          <form action="#" class="search-bar">
+            <a href="#" class="search-icon">
+              <img src="./images/i-search.png">
+            </a>
+            <div>
+              <input type="text" placeholder="搜索">
+            </div>
+          </form>
+          <a href="#" class="i-ling">
+              <img src="./images/i-ling.png">
+          </a>
+        </div>
+    </div>
+  </header>
+  <div class="container">
+
+    <div class="first-flex first">
+      <a href="#">
+        <img src="./images/first.jpg">
+      </a>
+    </div>
+
+    <div class="first-flex second">
+
+      <div class="second-row">
+        <a href="#">
+          <img src="./images/row11.jpg">
+        </a>
+        <a href="#">
+          <img src="./images/row12.jpg">
+        </a>
+      </div>
+
+      <div class="second-row">
+        <a href="#">
+          <img src="./images/row21.jpg">
+        </a>
+        <a href="#">
+          <img src="./images/row22.jpg">
+        </a>
+      </div>
+
+      
+    </div>
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    $('.search-icon').click(function(){
+      $('.search-bar').addClass('expand');
+      $('.search-bar input').focus();
+
+    })
+
+    $(document).on('click',':not(".search-icon")',function(){
+      $('.search-bar').removeClass('expand');
+      console.log(1);
+      
+    }) 
+  })
+</script>
+
+</html>

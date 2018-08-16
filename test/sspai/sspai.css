@@ -1,0 +1,134 @@
+* {
+  transition: all 0.5s;
+}
+/* filter: brightness(1.1); */
+
+header{
+  background-color: #292525;
+  height: 50px;
+  border-bottom: 1px solid #292525;
+}
+.inner{
+  max-width: 1110px;
+  margin: 0 auto;
+  position: relative;
+}
+.console{
+  position: absolute;
+  right: 0;
+  height: 50px;
+  display: flex;
+}
+.console a{
+  display: inline-block;
+  margin-left: 20px;
+}
+.console *{
+  vertical-align: middle;
+  line-height: 50px;
+}
+.console img{
+  width: 24px;
+  height: 24px;
+}
+.console img:hover{
+  filter: brightness(1.8);
+}
+.inner .logo{
+  display: block;
+  height: 38px;
+  width: 108px;
+  position: absolute;
+  left: 0;
+  background: url(./images/sspai-logo.png) no-repeat;
+  background-size: 100%;
+  margin: 7px 0;
+}
+.logo span{
+  display: none;
+}
+.search-bar{
+  overflow: hidden;
+  width: 50px;
+}
+.search-bar.expand{
+  width: 240px;
+}
+/* 搜索 */
+.search-bar div{
+  display: inline-block;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.search-bar input{
+  height: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+
+
+/* 中间start */
+.container{
+  margin: 0 10px;
+  margin-top: 45px;
+  display: flex;
+}
+a {
+  display: block;
+}
+.container .first-flex{
+  font-size: 0;
+  box-sizing: border-box;
+  margin-right: 5px;
+}
+
+@media (min-width: 769px){
+  .container .first-flex{
+    flex: 1;
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px){
+  .container{
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  .container .first-flex{
+    margin-bottom: 3px;
+  }
+}
+ 
+
+.first img{
+  width: 100%;
+  display: block;
+}
+
+.second{
+  /* display: flex; */
+}
+
+.second .second-row{
+  display: flex;
+}
+.second-row:first-child{
+  margin-bottom: 5px;
+}
+
+.second-row img{
+  width: 100%;
+  display: block;
+}
+.second-row a{
+  flex: 1;
+}
+.second-row a:first-child{
+  margin-right: 5px;
+}
+/* 中间end */
