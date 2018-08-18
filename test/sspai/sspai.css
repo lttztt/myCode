@@ -9,7 +9,17 @@ a{
   text-decoration: none;
 }
 /* filter: brightness(1.1); */
+/* 顶部进度条 */
+.progress-indicator{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: #0A74DA;
+  z-index: 9999;
+}
 /* 顶部logo和搜索 */
+
 header {
   background-color: #292525;
   height: 50px;
@@ -186,6 +196,9 @@ a {
 
 .home{
   margin-top: 40px;
+}
+.inner .clearBoth{
+  clear: both;
 }
 
 .home .home-left {
