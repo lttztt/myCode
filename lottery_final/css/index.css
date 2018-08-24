@@ -1,11 +1,11 @@
 /* 清除默认样式 */
 *{margin:0;padding:0}
-body,html{width:100%;background-color:#fddfad}
+body,html{width:100%;max-width: 750px;margin: 0 auto;background-color:#fddfad}
 .hiddenImg{display:none}
 /* 内容结构 */
 .top_banner{background-color:#eafafd}
 .top_banner img{width:100%}
-.main{background-image:url(../images/bg_main.png);background-repeat:no-repeat;background-size:100% 100%;position:relative}
+.main{background-image:url(../images/bg_main.png);background-repeat:no-repeat;background-size:100% 100%;position:relative;padding-top: 35px;}
 .main .lottery{width:100%;margin-top:-5px}
 .lottery .lottery_title{padding:10px;text-align:center;color:#fff;font-weight:700;letter-spacing:1px;font-size: 16px;}
 .lottery_dish{position:relative;text-align:center;overflow:hidden}

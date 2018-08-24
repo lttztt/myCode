@@ -33,6 +33,8 @@ var $img = $(".hidden");
 
 window.onload = function() {
   w = h = $(document).width();
+  console.log(w);
+  if(w > 414){w = h = 414}
   document.getElementById("lotterys").height = h;
   document.getElementById("lotterys").width = w;
   drawLottery();
