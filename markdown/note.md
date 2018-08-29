@@ -31,4 +31,15 @@ layui.use(['layer','jquery'], function () {
 
 把笔记放到一个文件中， 遇到有用的知识点 即刻记下来。一天提交一次以做管理
  
+ # 18/8/29
+
+## linux和ssr
+
+ssr 可用教程：
+使用`sudo -i`切换到root用户
+
+## 谷歌插件
+
+1. 可以执行脚本的[Tampermonkey](https://sspai.com/post/40485)
+2. 换肤插件：stylish
 
