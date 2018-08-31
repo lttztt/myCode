@@ -30,7 +30,7 @@ layui.use(['layer','jquery'], function () {
 > 纠正
 
 把笔记放到一个文件中， 遇到有用的知识点 即刻记下来。一天提交一次以做管理
- 
+
  # 18/8/29
 
 ## linux和ssr
@@ -128,4 +128,74 @@ Wechat：137xxxx6136 | Github: https://github.com/Caijialinxx
 - GPA：3.6 / 4.0
 - 荣誉：校二、三奖学金、优秀学生（2014-2015、2016-2017共两学年）、优秀学生干部（2014-2015、2016-2017共两学年）
 - 相关课程：网络应用开发（PHP）、数据结构与算法、数据库系统原理、计算机网络等
+
+## 18/08/31
+
+
+
+## EventHub 
+
+**方方**
+
+```javascript
+class EventHub {
+        constructor() {
+            this.events = {}
+        }
+        on(eventName, fn) {
+            if (!this.events[eventName]) {
+                this.events[eventName] = []
+            }
+            this.events[eventName].push(fn)
+        }
+        emit(eventName, params) {
+            let fnList = this.events[eventName]
+            fnList.map((fn) => {
+                fn.apply(null, params)
+            })
+        }
+        off(eventName, fn) {
+            let fnList = this.events[eventName]
+            for (let i = 0; i < fnList.length; i++) {
+                if (fnList[i] === fn) {
+                    delete fnList[i]
+                    break
+                }
+            }
+        }
+    }
+    var event = new EventHub();
+    $('#app').on('click',function(){
+        event.emit('test');
+    })
+    event.on('test',()=>{			
+        console.log('触发了');
+    })
+```
+
+
+
+## javascript碎知识
+
+
+
+**数组的空位**
+
+1. 数组的空位会反映在`length`属性，也就是说空位有自己的位置，但是这个位置的值是未定义，即这个值是不存在的。如果一定要读取，结果就是`undefined`
+2. `undefined`在JavaScript语言中表示不存在
+3. 这就解释了为什么`in`运算符、数组的`hasOwnProperty`方法、`Object.keys`方法，都取不到空位的属性名。因为这个属性名根本就不存在，规格里面没说要为空位分配属性名(位置索引），只说要为下一个元素的位置索引加1。
+
+## css小效果
+
+```css
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+```
+
+可以制作出多层底纹的效果。如下：
+
+![](E:\liuzhe\git\myCode\markdown\document\multiBoxshadow.png)
+
+## leancloud
+
+通过别人的项目实战了解： [react 代办清单](https://github.com/Caijialinxx/todo-react/)
 
