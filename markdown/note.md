@@ -1,4 +1,4 @@
-# 18/8/28
+# 8/28
 ---
 ## padStart()，padEnd()
 
@@ -43,7 +43,7 @@ ssr 可用教程：
 1. 可以执行脚本的[Tampermonkey](https://sspai.com/post/40485)
 2. 换肤插件：stylish
 
-# 18/8/30
+# 8/30
 
 ## linux
 
@@ -129,7 +129,7 @@ Wechat：137xxxx6136 | Github: https://github.com/Caijialinxx
 - 荣誉：校二、三奖学金、优秀学生（2014-2015、2016-2017共两学年）、优秀学生干部（2014-2015、2016-2017共两学年）
 - 相关课程：网络应用开发（PHP）、数据结构与算法、数据库系统原理、计算机网络等
 
-## 18/8/31
+## 8/31
 
 ## EventHub 
 
@@ -196,3 +196,21 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px r
 ## leancloud
 
 通过别人的项目实战了解： [react 代办清单](https://github.com/Caijialinxx/todo-react/)
+
+# 9/3
+
+## 片段
+
+好看的颜色：#E5302F
+
+<div style="width:50px;height:20px;background: #E5302F"></div>
+
+[web安全色](http://www.bootcss.com/p/websafecolors/)
+
+
+
+## 什么是vue的运行时版本和vue-cli生成的有什么区别
+
+
+
+- proposal-object-rest-spread [es6对象展开运算符](
