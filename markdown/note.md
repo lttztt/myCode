@@ -30,7 +30,7 @@ layui.use(['layer','jquery'], function () {
 > 纠正
 
 把笔记放到一个文件中， 遇到有用的知识点 即刻记下来。一天提交一次以做管理
- 
+
  # 18/8/29
 
 ## linux和ssr
@@ -213,4 +213,22 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px r
 
 
 
-- proposal-object-rest-spread [es6对象展开运算符](
+- proposal-object-rest-spread [es6对象展开运算符](https://babeljs.io/docs/en/babel-plugin-transform-object-rest-spread/)
+
+# 9-4
+
+## 网站和资源
+
+- JetBrains 系列软件汉化包 [TranslatorX](https://github.com/pingfangx/TranslatorX)
+
+- webStorm 破解 [激活码和补丁](http://idea.lanyus.com/) 和  [参考CSDN](https://blog.csdn.net/voke_/article/details/76418116)
+
+  > `用补丁在bin/WebStorm.exe.vmoptions和WebStorm.exe.vmoptions文件最后加入`
+
+  - `-javaagent:D:/Program Files (x86)/JetBrains/WebStorm/bin/破解补丁名字.jar`
+  - 保存后打开webstorm选择`**activation code**` 输入刚才的这句
+  - 破解完成
+
+## 番薯问题解决
+
+### 新版的 element-ui的 select组件 如果传入的是一个对象的话。需要给select 加一个value-key绑定一个唯一的值
