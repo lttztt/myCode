@@ -232,3 +232,16 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px r
 ## 番薯问题解决
 
 ### 新版的 element-ui的 select组件 如果传入的是一个对象的话。需要给select 加一个value-key绑定一个唯一的值
+
+
+
+## 9/5
+
+### 键盘圈4大神器
+
+1. 赛睿7g黑轴
+2. Das MolelS 青轴
+3. cherry3494 红轴
+4. Filco 茶轴
+
+### 实质上任何在回调函数中进行的状态的改变都是不可追踪的。
