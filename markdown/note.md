@@ -245,3 +245,12 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px r
 4. Filco 茶轴
 
 ### 实质上任何在回调函数中进行的状态的改变都是不可追踪的。
+
+
+
+## 9/6
+
+### element-ui中el-input添加 `.enter`修饰符不生效
+
+**解决**：给后面加上`.native`
+
