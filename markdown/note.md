@@ -254,3 +254,43 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px r
 
 **解决**：给后面加上`.native`
 
+
+
+## 9/7
+
+### emacs
+
+
+
+### 哔哩哔哩视频下载
+
+在视频页的 地址栏 www.bilibili.com 改为 www.bilibilijj.com
+
+实际上是 [jj下载](http://client.jijidown.com/)
+
+### telegram
+
+**贴吧两个代理**
+
+```
+tg://proxy?server=45.77.97.94&port=400&secret=5788c35845a9d6c9e8a0db182c60765e
+tg://proxy?server=74.120.175.43&port=400&secret=bbd3d8c677df2c657bed1a1094a7e75a
+```
+
+**简书两个代理**
+
+```
+https://t.me/proxy?server=lancitou.net&port=9527&secret=de731d1e955150d03ae40579efdfb3a3
+tg://proxy?server=lancitou.net&port=9527&secret=de731d1e955150d03ae40579efdfb3a3
+
+作者：yestyle
+链接：https://www.jianshu.com/p/d40209b94586
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+```
+
+### 自己vps配置
+
+f6f7e5c619afc273a222eda1d78d98bf
+
+./mtproto-proxy -u nobody -p 8888 -H 443 -S f6f7e5cnobody afc273a222eda1d78d98bf --aes-pwd proxy-secret proxy-multi.conf -M 0 &
