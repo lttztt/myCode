@@ -294,3 +294,35 @@ tg://proxy?server=lancitou.net&port=9527&secret=de731d1e955150d03ae40579efdfb3a3
 f6f7e5c619afc273a222eda1d78d98bf
 
 ./mtproto-proxy -u nobody -p 8888 -H 443 -S f6f7e5cnobody afc273a222eda1d78d98bf --aes-pwd proxy-secret proxy-multi.conf -M 0 &
+
+
+
+## 9/8
+
+### 单词
+
+1. draft: 草稿
+2. subtitle: 副标题
+3. front-matter: 前页
+4. scaffold: 脚手架、模板
+
+### hexo
+
+**扁平化theme**
+
+Powered by [Hexo](https://hexo.io/) Theme - [Material](https://github.com/viosey/hexo-theme-material)
+
+
+
+**适合书写**
+
+[Hexo](http://hexo.io/) Theme [Yilia](https://github.com/litten/hexo-theme-yilia) by Litten
+
+
+
+### techmessage的macos教学
+
+
+
+
+
