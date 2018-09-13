@@ -96,10 +96,13 @@ Wechat：137xxxx6136 | Github: https://github.com/Caijialinxx
     - 有 React 的开发经历，理解 JSX 、组件、 props 、 state 及生命周期等
     - 有 React Native 移动端开发的经历，掌握原生 UI 组件、 React Navigation 、动画等 API 的使用
 - 移动端开发
+
     - 会使用 REM 、 vw / vh 、 媒体查询等技术制作适配手机设备的页面
 - Node.js
+
     - 搭配 Express 和 Socket.IO 开发在线聊天室，并已将项目部署上线
 - Webpack
+
     - 有使用 Webpack 打包项目的经验，了解其管理资源的方法，如 css-loader 、 file-loader 等
 - 其他
     - 掌握 JQuery 的使用
@@ -389,10 +392,19 @@ Powered by [Hexo](https://hexo.io/) Theme - [Material](https://github.com/viosey
 
 ### techmessage的macos教学
 
-<<<<<<< HEAD
-=======
+## 9-10
+
+apprise 弹出插件
+
+## 9-11
+
+### gitHub的API
+
+1. 获取用户的点赞 `https://api.github.com/users/liuzheGit/starred`
 
 
 
+## svg图
 
->>>>>>> e14ac7027e279d74c53316469623cadc06406182
+[simpleIcons](https://simpleicons.org/)
+
