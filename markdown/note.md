@@ -31,11 +31,7 @@ var $ = layui.jquery;
 
 把笔记放到一个文件中， 遇到有用的知识点 即刻记下来。一天提交一次以做管理
 
-<<<<<<< HEAD
 # 18/8/29
-=======
- # 18/8/29
->>>>>>> e14ac7027e279d74c53316469623cadc06406182
 
 ## linux和ssr
 
@@ -70,25 +66,6 @@ Wechat：137xxxx6136 | Github: https://github.com/Caijialinxx
 
 ## 专业技能
 - HTML5, CSS3 & JavaScript
-<<<<<<< HEAD
-- 能够使用原生 JavaScript 独立制作精美网页
-- 掌握 HTML5 语义化标签如 canvas 、 nav 及 WebStorage API 等
-- 掌握 CSS3 动画、过渡、弹性盒子布局、媒体查询等响应式设计常用技术
-- React & React Native
-- 有 React 的开发经历，理解 JSX 、组件、 props 、 state 及生命周期等
-- 有 React Native 移动端开发的经历，掌握原生 UI 组件、 React Navigation 、动画等 API 的使用
-- 移动端开发
-- 会使用 REM 、 vw / vh 、 媒体查询等技术制作适配手机设备的页面
-- Node.js
-- 搭配 Express 和 Socket.IO 开发在线聊天室，并已将项目部署上线
-- Webpack
-- 有使用 Webpack 打包项目的经验，了解其管理资源的方法，如 css-loader 、 file-loader 等
-- 其他
-- 掌握 JQuery 的使用
-- 掌握 Scss 、 Less 的使用
-- 理解 MVC 、 MVVM 思想
-- 掌握 HTTP 基础
-=======
     - 能够使用原生 JavaScript 独立制作精美网页
     - 掌握 HTML5 语义化标签如 canvas 、 nav 及 WebStorage API 等
     - 掌握 CSS3 动画、过渡、弹性盒子布局、媒体查询等响应式设计常用技术
@@ -109,7 +86,6 @@ Wechat：137xxxx6136 | Github: https://github.com/Caijialinxx
     - 掌握 Scss 、 Less 的使用
     - 理解 MVC 、 MVVM 思想
     - 掌握 HTTP 基础
->>>>>>> e14ac7027e279d74c53316469623cadc06406182
 
 ## 项目经验
 ### 简历生成器
@@ -164,7 +140,6 @@ Wechat：137xxxx6136 | Github: https://github.com/Caijialinxx
 
 ```javascript
 class EventHub {
-<<<<<<< HEAD
 constructor() {
 this.events = {}
 }
@@ -197,40 +172,6 @@ event.emit('test');
 event.on('test',()=>{            
 console.log('触发了');
 })
-=======
-        constructor() {
-            this.events = {}
-        }
-        on(eventName, fn) {
-            if (!this.events[eventName]) {
-                this.events[eventName] = []
-            }
-            this.events[eventName].push(fn)
-        }
-        emit(eventName, params) {
-            let fnList = this.events[eventName]
-            fnList.map((fn) => {
-                fn.apply(null, params)
-            })
-        }
-        off(eventName, fn) {
-            let fnList = this.events[eventName]
-            for (let i = 0; i < fnList.length; i++) {
-                if (fnList[i] === fn) {
-                    delete fnList[i]
-                    break
-                }
-            }
-        }
-    }
-    var event = new EventHub();
-    $('#app').on('click',function(){
-        event.emit('test');
-    })
-    event.on('test',()=>{			
-        console.log('触发了');
-    })
->>>>>>> e14ac7027e279d74c53316469623cadc06406182
 ```
 
 
@@ -285,19 +226,11 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px r
 
 - webStorm 破解 [激活码和补丁](http://idea.lanyus.com/) 和  [参考CSDN](https://blog.csdn.net/voke_/article/details/76418116)
 
-<<<<<<< HEAD
-> `用补丁在bin/WebStorm.exe.vmoptions和WebStorm.exe.vmoptions文件最后加入`
-
-- `-javaagent:D:/Program Files (x86)/JetBrains/WebStorm/bin/破解补丁名字.jar`
-- 保存后打开webstorm选择`**activation code**` 输入刚才的这句
-- 破解完成
-=======
   > `用补丁在bin/WebStorm.exe.vmoptions和WebStorm.exe.vmoptions文件最后加入`
 
   - `-javaagent:D:/Program Files (x86)/JetBrains/WebStorm/bin/破解补丁名字.jar`
   - 保存后打开webstorm选择`**activation code**` 输入刚才的这句
   - 破解完成
->>>>>>> e14ac7027e279d74c53316469623cadc06406182
 
 ## 番薯问题解决
 
