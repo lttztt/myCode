@@ -562,22 +562,82 @@ y2/foo 来拷贝2个 “foo” 之间的字符串。
   ```
 
 - wting/gitsessions.vim - 基于目录和git分支自动保存/加载vim会话。
+
 - godlygeek/tabular - 用于文本过滤和对齐的Vim脚本
+
 - plasticboy/vim-markdown -
+
 - reedes/vim-colors-pencil - 浅色（和深色）配色方案
+
 - xolox/vim-misc - 杂项自动加载Vim脚本
+
 - hail2u/vim-css3-syntax - CSS3语法（以及一些国外规范中定义的语法）支持Vim的内置语法/ css.vim
+
 - groenewege/vim-less - LESS的vim语法（动态CSS）
+
 - mikewest/vimroom - 在Vim中模拟一个模糊的WriteRoom环境。
+
 - sjl/gundo.vim - 可以显示您的Vim撤消树。
+
 - altercation/vim-colors-solarized - Solarized主题
+
 - ervandew/supertab - 使用Tab执行所有vim插入模式完成
+
 - pangloss/vim-javascript - 在Vim中大大改进了Javascript缩进和语法支持。
+
 - ctrlpvim/ctrlp.vim - 文件，缓冲区，mru，tag等查找器的活动分叉。
+
 - romainl/flattened - vim配色
+
 - scrooloose/nerdcommenter - 快速注释代码
+
 - scrooloose/nerdtree -  vim的树资源管理器插件。
+
 - Xuyuanp/nerdtree-git-plugin - 一个显示git状态的NERDTree插件
+
 - airblade/vim-rooter - 将Vim工作目录更改为项目根目录（由已知目录或文件的存在标识）。
+
 - vim-scripts/gitignore
+
 - elzr/vim-json - im的更好的JSON：关键字与值的明确突出显示，JSON特定（非JS）警告，引用隐藏
+
+# 9-14
+
+### js之iframe子页面与父页面通信
+
+### 一、同源下的父子页面
+
+**方法调用**
+
+父页面调用子页面方法：FrameName.window.childMethod();
+
+子页面调用父页面方法：parent.window.parentMethod();
+
+**DOM元素访问**
+
+获取到页面的window.document对象后，即可访问DOM元素
+
+**注意事项**
+
+要确保在iframe加载完成后再进行操作，如果iframe还未加载完成就开始调用里面的方法或变量，会产生错误。判断iframe是否加载完成有两种方法：
+
+1. iframe上用onload事件
+
+2. 用document.readyState=="complete"来判断
+
+### 二、跨域父子页面
+
+**父页面向子页面传递数据**
+
+实现的技巧是利用location对象的hash值，通过它传递通信数据。在父页面设置iframe的src后面多加个data字符串，然后在子页面中通过某种方式能即时的获取到这儿的data就可以了，例如：
+
+1. 在子页面中通过setInterval方法设置定时器，监听location.href的变化即可获得上面的data信息
+
+2. 然后子页面根据这个data信息进行相应的逻辑处理
+
+**子页面向父页面传递数据**
+
+实现技巧就是利用一个代理iframe，它嵌入到子页面中，并且和父页面必须保持是同域，然后通过它充分利用上面第一种通信方式的实现原理就把子页面的数据传递给代理iframe，然后由于代理的iframe和主页面是同域的，所以主页面就可以利用同域的方式获取到这些数据。使用 window.top或者window.parent.parent获取浏览器最顶层window对象的引用。
+
+
+
