@@ -642,4 +642,43 @@ y2/foo 来拷贝2个 “foo” 之间的字符串。
 ## 9-17
 
 1. [应用的介绍库](https://introjs.com/) - 使用动画来一步步引导用户熟悉网站功能
-2. 
+
+## 9-18
+
+### sublime text3 中Mac下ctrl+e的功能被emmet覆盖。
+
+
+
+因为已经习惯ctrl+e快捷键跳转到行尾的功能，所以需要自定义快捷键。
+
+> 自定义的原理是，用一个命令去覆盖emmet的快捷键ctrl+e的自动补全功能，再把ctrl+e快键键设置成mac原有的跳转到行尾的功能。
+
+**找到sublime text -> Perferences -> Package Settings -> Emmet -> Key Bindings-User**
+
+添加代码：
+
+```
+[
+    {
+        "keys": [
+            "super+j"
+        ], 
+        "args": {
+            "action": "expand_abbreviation"
+        }, 
+        "command": "run_emmet_action", 
+        "context": [
+            {
+                "key": "emmet_action_enabled.expand_abbreviation"
+            }
+        ]
+    },
+    { 
+        "keys": [
+            "ctrl+e"
+        ], 
+        "command": "move_to", 
+        "args": {"to": "eol", "extend": false} 
+    }
+] 
+```
