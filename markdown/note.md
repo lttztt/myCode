@@ -682,3 +682,133 @@ y2/foo 来拷贝2个 “foo” 之间的字符串。
     }
 ] 
 ```
+## 9-23
+
+### 再学CSS
+# css
+
+## CSS盒模型中的`box-sizing`
+
+`box-sizing`:的值默认为content-box；这个时候如果border/padding变大 就会撑大内容；
+
+例如：如果你设置一个元素的宽为100px，那么这个元素的内容区会有100px宽，并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中。
+
+设为：`border-box`后，css中如何设置内容区(width,height)的大小，最终就多大。
+
+
+
+## background-clip
+
+> 设置元素的背景（背景图片或颜色）是否延伸到边框下面。
+
+默认值： border-box 。背景延伸到边框外沿（但是在边框之下）。
+
+padding-box : 边框下没有背景，背景延伸到内边距的外沿。无padding的时候和content-box效果一样。
+
+content-box： 背景裁剪到内容区 (`content-box) `外沿。
+
+
+
+## background-attachment
+
+> 如果指定了background-image，那么`bakcground-attachment` 决定背景是在视口中固定的还是虽包含他的区块滚动的。
+
+scroll : 初始值。背景相对于视口固定，而不是随着它的内容滚动。
+
+fixed: 背景相对于视口固定。 即使一个元素可以滚动，背景也不会随着元素的内容滚动。
+
+local： 背景相对于视口固定。如果元素可以滚动，背景也不会随着元素的内容滚动。但是如果内容可滚动，则背景会随着内容的滚动而滚动。
+
+
+
+## background-orgin
+
+> 指定背景图片的原点位置的背景相对区域。
+>
+> 注意：当使用 [`background-attachment`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-attachment) 为fixed时，该属性将被忽略不起作用。
+
+border-box: 默认值。 背景图片的摆放以border区域为参考。
+
+padding-box: 背景图片的摆放以padding区域为参考。
+
+content-box: 背景图片的摆放以content区域为参考。
+
+
+
+## background-position
+
+> 指定背景图片的初始位置 。 相对于background-origin来说
+
+取值： 
+
+关键字： top、button、left、right、center
+
+百分之值：25% 75%
+
+尺寸值：0 0;  1cm 2cm; 10ch 8em;...
+
+多个背景（逗号分隔）: 0 0, center；
+
+距离边界的偏移： bottom 10px right 20px;
+
+
+
+## background-size
+
+> 设置背景图片大小。图片可以保持原有尺寸或拉伸到新的尺寸，亦或者在保持原有比例的同时缩放到元素的可用空间的尺寸.
+
+关键字： cover contain
+
+cover:  缩放背景图片以完全覆盖背景区（背景图可能显示不全） 
+
+contain：缩放背景图片以完全装入背景区，可能背景区部分空白。（可能背景区部分空白）
+
+一个值： 50%、3em、12px、auto ： 指定图片的宽度，高度隐式的为auto
+
+两个值： 50% auto; 第一个是宽度，第二个是高度。
+
+多背景：20%,50% 50%; 用逗号分隔。
+
+> 注意： 其中数值如果是百分比的时候：指定背景图片相对于背景区的百分比。
+
+## border-style
+
+可以设置多个，对应 top right bottom left;
+
+可用值：
+
+hidden：不显示边框、优先级最高。
+
+none：不显示边框、优先级最低。如果有其他重叠边框，则会显示那个。
+
+dotted：一系列圆点。
+
+solid：实线。
+
+double：双实线。
+
+groove：有雕刻效果的边框。
+
+ridge：有浮雕效果的边框。
+
+inset： 显示有陷入效果。
+
+outset： 显示有突出效果。
+
+
+
+## border-image
+
+>  可以用图片也可以用渐变。
+
+语法：
+
+` border-image: image-source image-height image-width image-repeat `
+
+Image-source: 图片源。 路径或是渐变`linear-gradient(red, yellow)`
+
+image-height：图片源的高度
+
+image-repeat：重复
+
+
