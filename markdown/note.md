@@ -898,6 +898,30 @@ classList.toggle('active') 原生的toggle class
 移动端是没有滚动条的，他有的是位置指示器。
 
 
+## 9-26
+
+### zsh技巧
+1. zsh的`d`命令可以列出这个会话中访问的目录，然后输入对应的编号即可进入。
+2. 直接输入当前目录下的目录即可进入，甚至不需要cd。输入.. 也可是返回上一级目录。
 
 
+### 书籍
+1. MacTalk 池建强
 
+### html css 
+
+1. emmet的移动端的meta快捷键： meta:vp
+2. calc属性中如果用`-`或`+`号，必须前后添加空格，`*`和`/`可以不加，但是建议都加上。前缀:
+```css
+.elm {
+	/*Firefox*/
+	-moz-calc(expression);
+	/*chrome safari*/
+	-webkit-calc(expression);
+	/*Standard */
+	calc();
+ }
+```
+
+### shell 命令
+1. tree . ?
