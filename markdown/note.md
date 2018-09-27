@@ -929,3 +929,4 @@ classList.toggle('active') 原生的toggle class
 ## 9-27
 
 1.js.bin的fake百度 http://js.jirengu.com/rovas/8/edit
+ 学到用flex来做布局，classList的用法。
