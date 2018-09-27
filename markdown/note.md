@@ -925,3 +925,7 @@ classList.toggle('active') 原生的toggle class
 
 ### shell 命令
 1. tree . ?
+
+## 9-27
+
+1.js.bin的fake百度 http://js.jirengu.com/rovas/8/edit
