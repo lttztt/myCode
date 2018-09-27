@@ -930,3 +930,9 @@ classList.toggle('active') 原生的toggle class
 
 1.js.bin的fake百度 http://js.jirengu.com/rovas/8/edit
  学到用flex来做布局，classList的用法。
+
+2.js.bin的图片上传美化 http://js.jirengu.com/gazag/3/edit
+
+3.js.bin的按钮涟漪效果 http://js.jirengu.com/wivux/2/edit
+给一个元素的css加上`pointer-events:none`那么它将不会响应任何的鼠标点击事件，被穿透了一样。
+ontransitionend事件是在动画结束后的监听事件。
