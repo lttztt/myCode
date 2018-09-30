@@ -936,3 +936,9 @@ classList.toggle('active') 原生的toggle class
 3.js.bin的按钮涟漪效果 http://js.jirengu.com/wivux/2/edit
 给一个元素的css加上`pointer-events:none`那么它将不会响应任何的鼠标点击事件，被穿透了一样。
 ontransitionend事件是在动画结束后的监听事件。
+
+## 9-30
+
+## 我的配置习惯
+
+1. 在`~/`目录配置 `~/repos` 文件库
