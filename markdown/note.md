@@ -822,15 +822,15 @@ image-repeat：重复
 
 ### CSS的宽度和高度
 **文档流（Normal Flow） 普通流 常规流**
-    内联元素的宽高
-    块级元素的宽高
-    水平居中
-    垂直居中
-    文字溢出省略（多行）
+​    内联元素的宽高
+​    块级元素的宽高
+​    水平居中
+​    垂直居中
+​    文字溢出省略（多行）
 **盒模型**
-    一比一的 div
-    outline
-    border 调试大法
+​    一比一的 div
+​    outline
+​    border 调试大法
 ### 总结 
 1. 如果div中只有内联元素。那么它的高度是内联元素的行高。（字体默认行高 是字体设计者确定的）
 2. &nbsp； --no break space; 不换行的空格
@@ -942,3 +942,11 @@ ontransitionend事件是在动画结束后的监听事件。
 ## 我的配置习惯
 
 1. 在`~/`目录配置 `~/repos` 文件库
+
+
+
+## 10-8
+
+### good word
+
+Learn something of everything, Learn everything of something.
