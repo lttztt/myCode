@@ -952,3 +952,12 @@ ontransitionend事件是在动画结束后的监听事件。
 Learn something of everything, Learn everything of something.
 
 积少成多
+
+**git**
+
+本地git项目和github代码建立关系
+
+```bash
+git remote add ortgin xxx/xxx.git
+git push -u origin master
+```
