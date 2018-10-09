@@ -950,3 +950,5 @@ ontransitionend事件是在动画结束后的监听事件。
 ### good word
 
 Learn something of everything, Learn everything of something.
+
+积少成多
