@@ -961,3 +961,22 @@ Learn something of everything, Learn everything of something.
 git remote add ortgin xxx/xxx.git
 git push -u origin master
 ```
+
+## 10-10
+
+**js的lastIndexOf**
+
+> 返回一个字符串指定字符串值最后出现的位置，从后向前搜索。
+>
+> 如果没有出现，则返回`-1`
+
+**js的substr**
+
+> 返回一个字符串从指定位置到 `提取的字符个数` 的子字符串。首位从0开始，可接受负数。
+>
+> 负数是从后往前数。但还是向后截取。
+
+**js的substring**
+
+> 返回一个字符串从开始索引值到结束索引值的子字符串(不含此位)，或者不传第二个参数（到末尾），不接受负数。
+
