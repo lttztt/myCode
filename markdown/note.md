@@ -980,3 +980,18 @@ git push -u origin master
 
 > 返回一个字符串从开始索引值到结束索引值的子字符串(不含此位)，或者不传第二个参数（到末尾），不接受负数。
 
+## 10-11
+
+###虎牙lol赛事答题api
+
+- https://activity.huya.com/faithbadge/cache.php?callback=getQuestionsList&m=FaithBadgeApi&do=getQuestionsList&pid=1346609715
+
+### git常用命令复习
+
+**恢复暂存区的所有文件到工作区**
+
+> git checkout .
+
+**重置暂存区和工作区的所有变动,到上一次commmit**
+
+> git reset --hard
