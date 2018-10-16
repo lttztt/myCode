@@ -995,3 +995,69 @@ git push -u origin master
 **重置暂存区和工作区的所有变动,到上一次commmit**
 
 > git reset --hard
+
+
+
+
+
+## 10-15
+
+### es6的对象
+
+**es5的对象**
+
+直接在字面量中声名属性, key 不能用变量, 因为他会直接被解析为字符串.
+
+所以要用必须:  先声明 后添加属性
+
+```js
+//错误示范
+var name = 'a';
+var object = {name: 1};
+object // {name: 1}
+
+// 正确的
+var name = 'a';
+var object = {};
+object[name] = 1;
+object // {a: 1}
+```
+
+**es6 动态属性名**
+
+```js
+var name = 'a';
+var object = { [name]: 1};
+objecct // {a: 1}
+```
+
+其中`[name]`中可以用运算符等等.
+
+js中对象的key可以不加引号是一个巨坑, 而JSON则剔除了它的坑
+
+### 浅拷贝
+
+```js
+var obj = {a: 1, b: 2, c: 3};
+
+// 方法一  用for循环赋值
+var newObj = {};
+for(let key in obj){
+    newObj[key] = obj[key]
+}
+
+// 方法二 Object.assign
+var newObj = Object.assign({}, obj);
+
+// 方法三  ...运算符
+var newObj = {...obj}
+
+```
+
+
+
+### undefined 是一个只读的变量
+
+
+## 学习套路 copy run modify (CRM)
+
