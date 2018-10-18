@@ -1063,4 +1063,13 @@ var newObj = {...obj}
 
 ## 10-17
 
-### 好看的loading动画[js.bin](http://js.jirengu.com/yurek/2/edit)
+### 好看的loading动画js.**bin**
+
+
+
+## 10-18
+
+### 我的博客
+
+1. 更改了主题
+2. 在theme的fexo的layout的post中添加了 网易音乐播放器 和 点击出现心的动态效果.
