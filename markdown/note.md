@@ -1073,3 +1073,20 @@ var newObj = {...obj}
 
 1. 更改了主题
 2. 在theme的fexo的layout的post中添加了 网易音乐播放器 和 点击出现心的动态效果.
+
+
+
+### 大牛
+
+- [孟坤](https://mkblog.cn/)
+  - [孟坤编程笔记](http://lab.mkblog.cn/learnweb/)
+  - [孟坤实验室](http://lab.mkblog.cn/)
+
+
+
+### 工具
+
+1. [H5 播放器](https://github.com/Wayou/HTML5_Audio_Visualizer)
+2. [十款精心挑选的在线CSS3代码生成工具](http://www.chinaz.com/free/2012/0928/276927.shtml)
+3. [可以学习的效果网址](http://lab.mkblog.cn/mouse_hover/)
+4. 
