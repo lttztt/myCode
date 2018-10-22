@@ -1090,3 +1090,9 @@ var newObj = {...obj}
 2. [十款精心挑选的在线CSS3代码生成工具](http://www.chinaz.com/free/2012/0928/276927.shtml)
 3. [可以学习的效果网址](http://lab.mkblog.cn/mouse_hover/)
 4. 
+
+
+## 10-22
+
+### BOM api
+writeln: 向文档中写入一串文本,并紧跟着一个换行符.
