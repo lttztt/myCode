@@ -1098,3 +1098,6 @@ var newObj = {...obj}
 writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 
 ### 一个jquery的form提交插件[jquery.form](https://github.com/jquery-form/form)
+
+### 乔布斯2015演讲
+ - Stay Hungry Stay Follish
