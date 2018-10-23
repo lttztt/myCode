@@ -1103,3 +1103,6 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
  - Stay Hungry Stay Follish
 
 ### 添加~/.lz 来储存我的小本本
+
+### 一个简单的REST API 的库 [json-server](https://www.npmjs.com/package/json-server)
+特性: 可以解析json文件,然后开启服务做自己本地的接口测试
