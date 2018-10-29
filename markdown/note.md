@@ -1110,3 +1110,6 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 ## 10-29
 
 ### 页面中跳转到另一个页面提示与其qq交谈, 是一个qq推广的服务;[地址](http://shang.qq.com/v3/index.html)
+
+### css技巧
+- 把页面中的a链接加上`outline: none`
