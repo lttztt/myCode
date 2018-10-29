@@ -1106,3 +1106,7 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 
 ### 一个简单的REST API 的库 [json-server](https://www.npmjs.com/package/json-server)
 特性: 可以解析json文件,然后开启服务做自己本地的接口测试
+
+## 10-29
+
+### 页面中跳转到另一个页面提示与其qq交谈, 是一个qq推广的服务;[地址](http://shang.qq.com/v3/index.html)
