@@ -226,7 +226,7 @@ S.UI = (function() {
                 default:
                     S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'What?' : current));
             }
-        }, 2000, sequence.length, '', showTitles);
+        }, 4000, sequence.length, '', showTitles);
     }
 
 
