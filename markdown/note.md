@@ -1123,3 +1123,4 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
   - 加上后缀 图片尺寸, 直接返回相应的美图
 
 - 一个轮播插件 [vegas](https://github.com/jaysalvat/vegas)
+- 在服务器上使用forever来维持,退出服务器依然可以访问接口
