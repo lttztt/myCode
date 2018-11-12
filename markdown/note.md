@@ -1113,3 +1113,13 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 
 ### css技巧
 - 把页面中的a链接加上`outline: none`
+
+## 11-12
+
+- 用nodejs的express配合heroku搭建一个在线部署的接口, 可以上传图片 接口: https://upload-1.herokuapp.com/
+  - [github](https://github.com/liuzheGit/server-herku)
+
+- 发现了一特别好的图片资源地[picsum](https://picsum.photos/) 
+  - 加上后缀 图片尺寸, 直接返回相应的美图
+
+- 一个轮播插件 [vegas](https://github.com/jaysalvat/vegas)
