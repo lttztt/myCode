@@ -50,11 +50,11 @@ ssr 可用教程：
 less 可翻页的cat
 
 grep 过滤   ps aux | grep node
-ls | grep xx 
+ls | grep xx
 
 ## 两款markdown软件
 
-1. typora 多平台 
+1. typora 多平台
 2. MWeb mac收费
 
 
@@ -134,7 +134,7 @@ Wechat：137xxxx6136 | Github: https://github.com/Caijialinxx
 
 ## 8/31
 
-## EventHub 
+## EventHub
 
 **方方**
 
@@ -169,7 +169,7 @@ var event = new EventHub();
 $('#app').on('click',function(){
 event.emit('test');
 })
-event.on('test',()=>{            
+event.on('test',()=>{
 console.log('触发了');
 })
 ```
@@ -348,7 +348,7 @@ apprise 弹出插件
 用Iconfont的矢量图标。把要使用的图标添加到一个项目中。
 然后生成symbol代码：如:`//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js`
 用的时候分三步：
-1. 直接引入（注意前面加https:）这个js文件 
+1. 直接引入（注意前面加https:）这个js文件
 2. 引入通用的css 代码
 ```css
 .icon {
@@ -662,25 +662,25 @@ y2/foo 来拷贝2个 “foo” 之间的字符串。
     {
         "keys": [
             "super+j"
-        ], 
+        ],
         "args": {
             "action": "expand_abbreviation"
-        }, 
-        "command": "run_emmet_action", 
+        },
+        "command": "run_emmet_action",
         "context": [
             {
                 "key": "emmet_action_enabled.expand_abbreviation"
             }
         ]
     },
-    { 
+    {
         "keys": [
             "ctrl+e"
-        ], 
-        "command": "move_to", 
-        "args": {"to": "eol", "extend": false} 
+        ],
+        "command": "move_to",
+        "args": {"to": "eol", "extend": false}
     }
-] 
+]
 ```
 ## 9-23
 
@@ -739,7 +739,7 @@ content-box: 背景图片的摆放以content区域为参考。
 
 > 指定背景图片的初始位置 。 相对于background-origin来说
 
-取值： 
+取值：
 
 关键字： top、button、left、right、center
 
@@ -759,7 +759,7 @@ content-box: 背景图片的摆放以content区域为参考。
 
 关键字： cover contain
 
-cover:  缩放背景图片以完全覆盖背景区（背景图可能显示不全） 
+cover:  缩放背景图片以完全覆盖背景区（背景图可能显示不全）
 
 contain：缩放背景图片以完全装入背景区，可能背景区部分空白。（可能背景区部分空白）
 
@@ -831,7 +831,7 @@ image-repeat：重复
 ​    一比一的 div
 ​    outline
 ​    border 调试大法
-### 总结 
+### 总结
 1. 如果div中只有内联元素。那么它的高度是内联元素的行高。（字体默认行高 是字体设计者确定的）
 2. &nbsp； --no break space; 不换行的空格
 3. text-align: justify ? 在多行中 行首和行尾对齐
@@ -844,7 +844,7 @@ image-repeat：重复
 10. margin合并
 11. overflow：hidden； 不到万不得已，不要用；
 
-div的高度是由它内部的文档流中元素的总和决定的。 
+div的高度是由它内部的文档流中元素的总和决定的。
 **文档流**：其实是叫普通流（normal-flow）元素按照其在HTML中的位置顺序决定排布过程。
 内联元素从左到右 ，块级元素从上到下,只要不是float和绝对定位的，都在普通流中。
 
@@ -908,7 +908,7 @@ classList.toggle('active') 原生的toggle class
 ### 书籍
 1. MacTalk 池建强
 
-### html css 
+### html css
 
 1. emmet的移动端的meta快捷键： meta:vp
 2. calc属性中如果用`-`或`+`号，必须前后添加空格，`*`和`/`可以不加，但是建议都加上。前缀:
@@ -1089,7 +1089,7 @@ var newObj = {...obj}
 1. [H5 播放器](https://github.com/Wayou/HTML5_Audio_Visualizer)
 2. [十款精心挑选的在线CSS3代码生成工具](http://www.chinaz.com/free/2012/0928/276927.shtml)
 3. [可以学习的效果网址](http://lab.mkblog.cn/mouse_hover/)
-4. 
+4.
 
 
 ## 10-22
@@ -1119,11 +1119,15 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 - 用nodejs的express配合heroku搭建一个在线部署的接口, 可以上传图片 接口: https://upload-1.herokuapp.com/
   - [github](https://github.com/liuzheGit/server-herku)
 
-- 发现了一特别好的图片资源地[picsum](https://picsum.photos/) 
+- 发现了一特别好的图片资源地[picsum](https://picsum.photos/)
   - 加上后缀 图片尺寸, 直接返回相应的美图
 
 - 一个轮播插件 [vegas](https://github.com/jaysalvat/vegas)
 - 在服务器上使用forever来维持,退出服务器依然可以访问接口
 
-## 11-13 
+## 11-13
 - 发现一个数据api服务[rap](http://rapapi.org/platform/home.do)
+
+## 11-15
+- 用了方方老师的dot-file, 有一个zsh的[框架](https://github.com/sorin-ionescu/prezto)
+- 用了命令行的git conifg 没有了, zsh的主题没有生效
