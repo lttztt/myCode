@@ -1131,3 +1131,11 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 ## 11-15
 - 用了方方老师的dot-file, 有一个zsh的[框架](https://github.com/sorin-ionescu/prezto)
 - 用了命令行的git conifg 没有了, zsh的主题没有生效
+
+## 11- 26
+
+- npm 中 移除npm -D 和-S 安装的 都用 `npm unstall package-name`
+- js的坑, return后面不用括号 会返回`undefined`
+- 把全局安装的`babel-cli`卸载了,以后要用就用`npm install --save-dev babel-cli`
+
+- Gitbook 开源markdown转html
