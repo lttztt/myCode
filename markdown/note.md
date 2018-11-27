@@ -1139,3 +1139,4 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 - 把全局安装的`babel-cli`卸载了,以后要用就用`npm install --save-dev babel-cli`
 
 - Gitbook 开源markdown转html
+- 一个动态生成图片的网站 [dummyimage](https://dummyimage.com/)
