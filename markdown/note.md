@@ -1140,3 +1140,17 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 
 - Gitbook 开源markdown转html
 - 一个动态生成图片的网站 [dummyimage](https://dummyimage.com/)
+- 安利一各种格式转gif的在线工具 [ezgif](https://ezgif.com/) 
+
+
+
+
+
+
+
+
+
+
+
+
+
