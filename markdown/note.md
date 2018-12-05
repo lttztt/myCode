@@ -1142,7 +1142,64 @@ writeln: 向文档中写入一串文本,并紧跟着一个换行符.
 - 一个动态生成图片的网站 [dummyimage](https://dummyimage.com/)
 - 安利一各种格式转gif的在线工具 [ezgif](https://ezgif.com/) 
 
+## linux
+- mkdir -p 递归创建
+- cp -p 保留文件属性
+- head -n x filename  查看文件前x行
+- tail -n x filename  查看文件末尾x行  -f 动态显示
 
+**软连接的文件 全部都是 lrwxrwxrwx **
+
+### chmod
+change the permissions mode of file
+
+用 -R 来递归 目录下的所有文件的权限
+权限的数字表示:
+r---4
+w---2
+x---1
+
+例子 :
+rwxrw-r--
+ 7  6  4
+
+
+ 一个用户 如果对此文件夹有 w 权限, 那么 这个文件中如果有 root 用户创建的 此用户无法 w , 也可以
+ 删除
+
+ r 和 x  权限 : 一般同时存在
+
+
+ 用户添加 : useradd  改密码: passwd
+
+
+ chown 改变所有者
+ 只有root可以做, sudo
+ chown [用户] [文件或目录]
+
+
+
+搜索
+
+locate 
+
+ping 加 次数: ping -c 3  qq.com  ping 3 次
+
+
+网络: 
+traceroute  + host.com
+
+查询网络状态: netstat
+
+mac下挂载和卸载
+
+用 diskutil list 查看
+
+确认 U 盘 路径
+
+用 `diskutil mountDisk + U盘路径` 进行挂载
+
+用 `diskutil unmountDisk + U盘路径` 进行卸载
 
 
 
