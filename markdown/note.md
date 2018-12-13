@@ -1201,6 +1201,12 @@ mac下挂载和卸载
 
 用 `diskutil unmountDisk + U盘路径` 进行卸载
 
+## 解决ssh连接服务器每次输入密码
+
+1. 每次用ssh 去连接远程服务器的时候 都需要输入密码
+2. 用 ssh-keygen 在本地的~/.ssh 下生成 公钥和私钥
+3. 把公钥内容拷贝到服务器的 ~/.ssh/authorized_keys 中 即可。
+4. Unix 系统 提供了ssh-copy-id root@ip  即可
 
 
 
