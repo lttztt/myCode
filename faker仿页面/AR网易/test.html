@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid-item {
+      width: 25%;
+      border: 1px solid #000;
+    }
+
+    .grid-item--width2 {
+      width: 50%;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid">
+    <div class="grid-item">...</div>
+    <div class="grid-item grid-item--width2">...</div>
+    <div class="grid-item">...</div>
+    <div class="grid-item">...</div>
+    <div class="grid-item">...</div>
+    <div class="grid-item">...</div>
+  </div>
+</body>
+
+</html>
+<script src="./js/jquery.js"></script>
+<script src="./js/packery-mode.pkgd.min.js"></script>
+<script>
+  $(function () {
+    $('.grid').packery({
+      // options
+      itemSelector: '.grid-item',
+      gutter: 10
+    });
+  })
+</script>

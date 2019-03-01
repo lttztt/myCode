@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>网易AR</title>
+  <style>
+    /* reset-css */
+    * {
+      margin: 0;
+      padding: 0;
+      transition: all .4s;
+    }
+
+    *,
+    *::after,
+    *::before {
+      box-sizing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    img {
+      display: block;
+    }
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .light-max-width {
+      display: none;
+    }
+
+
+    header {
+      /* background: #010001; */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: #ccc;
+      /* border: 1px solid #ccc; */
+      z-index: 9;
+    }
+
+    header.active {
+      background: #fff;
+    }
+
+    header.active>.max-width {
+      display: none;
+    }
+
+    header.active>.light-max-width {
+      display: block;
+    }
+
+    .max-width {
+      min-width: 800px;
+      margin-left: 50px;
+      margin-right: 50px;
+      /* border: 1px solid red; */
+      padding: 20px 0;
+    }
+
+    .light-max-width .max-width {
+      padding: 10px 0;
+    }
+
+    .logo-wrap {
+      /* border: 1px solid green; */
+      display: inline-block;
+    }
+
+    .logo-wrap>img {
+      width: 150px;
+    }
+
+    .nav-link {
+      float: right;
+      /* border: 1px solid #fff; */
+    }
+
+    .nav-link li {
+      display: inline-block;
+      font-size: 12px;
+      margin-right: 18px;
+      padding: 7px 0;
+    }
+
+    .light-max-width .nav-link a {
+      color: #9d9d9d;
+    }
+
+    .light-max-width .nav-link a:hover {
+      color: #333333;
+    }
+
+    .nav-link a {
+      color: #ccc;
+    }
+
+    .nav-link a:hover {
+      color: #fff;
+    }
+
+    .nav-link a.active {
+      color: #fff;
+    }
+
+    .light-max-width .nav-link a.active {
+      color: #333333;
+    }
+
+    .honer {
+      height: 100vh;
+      background: #000;
+      position: relative;
+    }
+
+    .honer-word {
+      position: absolute;
+      top: 370px;
+      left: -1000px;
+      transition: left .9s;
+    }
+
+    .honer-word.active {
+      left: 180px;
+    }
+
+    .honer-word>p {
+      font-size: 80px;
+      color: #fff;
+    }
+
+    .honer2 {
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    .honer2 .logo2 {
+      margin: 80px auto 50px;
+      width: 300px;
+    }
+
+    .honer2>p {
+      color: #848684;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .honer2>p:nth-of-type(2) {
+      margin-bottom: 100px;
+    }
+
+    .abtn {
+      padding: 8px 26px;
+      background: #000;
+      color: #ececec;
+      font-size: 12px;
+      letter-spacing: .21em;
+    }
+
+    .abtn:hover {
+      background: #616161;
+    }
+
+    .industry {
+      border: 1px solid #000;
+    }
+
+    .industry>h3 {
+      text-align: center;
+      margin: 50px 0;
+      font-size: 30px;
+      font-weight: normal;
+      letter-spacing: 0.26em;
+    }
+/* 自适应布局块 */
+    .repose-divs{
+      /* border: 1px solid red; */
+      /* overflow: hidden; */
+      padding-top: 50px;
+      width: 1170px;
+      margin: 0 auto;
+    }
+
+    .repose-div>.item-div {
+      float: left;
+      position: relative;
+      margin: 10px;
+      overflow: hidden;
+    }
+
+    .item-div:hover img{
+      transform: scale(1.2);
+    }
+    .item-div:hover > .item-words{
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .item-div:hover .words{
+      bottom: 0;
+      opacity: 1;
+    }
+
+    .item-div>img {
+      /* border: 1px solid #000; */
+    }
+
+    .item-div>.item-words {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .item-words .words {
+      color: #ececec;
+      font-size: 12px;
+      padding: 40px;
+      position: absolute;
+      bottom: -10px;
+      opacity: 0;
+    }
+
+    .words>h5 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* 技术优势 */
+    .youshi > h5{
+      font-size: 30px;
+      text-align: center;
+      margin: 50px 0;
+    }
+    .youshi > .youshi-video{
+      width: 1179px;
+      margin: 10px auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .youshi-video .video-item{
+      width: 260px;
+      height: 250px;
+      font-size: 12px;
+    }
+    .video-item > video{
+      display: inline-block;
+      width: 100%;
+    }
+    .video-item > h5{
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .section1{
+      height: 300px;
+      text-align: center;
+    }
+    footer{
+      background: #000;
+    }
+
+    .container{
+      width: 1170px;
+      margin: 0 auto;
+      color: #ccc;
+      border: 1px solid red;
+      padding: 15px 0;
+      font-size: 12px;
+    }
+
+    .container .container-left{
+      float: left;
+    }
+    .container .container-right{
+      float: right;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <a href="https://www.youtube.com/watch?v=mKxGMuH04uE" id="bgndVideo" class="player" 
+  data-property= "{videoURL:'mKxGMuH04uE',containment:'body', showControls:true, autoPlay:true, loop:false, 
+  vol:50, mute:true, startAt:10, opacity:1, addRaster:false, quality:'default'}" >
+  </a> -->
+  <header>
+    <div class="light-max-width">
+      <div class="max-width">
+        <div class="logo-wrap">
+          <img src="./images/logo-light.png">
+        </div>
+        <div class="nav-link">
+          <ul>
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">网易洞见</a></li>
+            <li><a class="active" href="javascript:;">网易影见</a></li>
+            <li><a href="javascript:;">成为AR开发者</a></li>
+            <li><a href="javascript:;">商业案例</a></li>
+            <li><a href="javascript:;">咨讯动态</a></li>
+            <li><a href="javascript:;">更多</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="max-width">
+      <div class="logo-wrap">
+        <img src="./images/logo.png">
+      </div>
+      <div class="nav-link">
+        <ul>
+          <li><a href="javascript:;">首页</a></li>
+          <li><a href="javascript:;">网易洞见</a></li>
+          <li><a class="active" href="javascript:;">网易影见</a></li>
+          <li><a href="javascript:;">成为AR开发者</a></li>
+          <li><a href="javascript:;">商业案例</a></li>
+          <li><a href="javascript:;">咨讯动态</a></li>
+          <li><a href="javascript:;">更多</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="honer">
+    <div class="honer-word">
+      <p>空间即舞台</p>
+      <p>品牌因影见而鲜活</p>
+    </div>
+  </div>
+  <div class="honer2">
+    <img src="./images/logo-2.png" alt="网易影见logo2" class="logo2">
+    <p class="logo2p">网易影见是一款增强现实(AR)互动投影模块，可将虚拟信息投射至现实空间并与物理世界进行交互。</p>
+    <p class="logo2p">平面点击、空中手势、物体交互等互动方式搭载生动玄妙的内容，赋能品牌，为品牌的互动产品研发、展示与营销提供新的方案与视⻆。</p>
+    <a class="abtn btn-mb100" href="javascript:;">申请影见试用样机</a>
+  </div>
+  <div class="industry">
+    <h3>行业应用</h3>
+    <div class="repose-divs clearfix">
+      <div class="repose-div repose1">
+        <div class="item-div">
+          <img src="./images/1.png" alt="1">
+          <div class="item-words">
+            <div class="words">
+              <h5>AR创新教室</h5>
+              <p>游戏化的教学方式，高互动性的教学内容，学生不再是仅仅直面书本，也能看到生动形象的主人公从书本中走出来.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="repose-div repose2">
+        <div class="item-div">
+          <img src="./images/2.png" alt="1">
+          <div class="item-words">
+            <div class="words">
+              <h5>AR创新教室</h5>
+              <p>游戏化的教学方式，高互动性的教学内容，学生不再是仅仅直面书本，也能看到生动形象的主人公从书本中走出来.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="repose-div repose3">
+        <div class="item-div">
+          <img src="./images/3.png" alt="1">
+          <div class="item-words">
+            <div class="words">
+              <h5>AR创新教室</h5>
+              <p>游戏化的教学方式，高互动性的教学内容，学生不再是仅仅直面书本，也能看到生动形象的主人公从书本中走出来.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="repose-div repose4">
+        <div class="item-div">
+          <img src="./images/4.png" alt="1">
+          <div class="item-words">
+            <div class="words">
+              <h5>AR创新教室</h5>
+              <p>游戏化的教学方式，高互动性的教学内容，学生不再是仅仅直面书本，也能看到生动形象的主人公从书本中走出来.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="repose-div repose6">
+        <div class="item-div">
+          <img src="./images/6.png" alt="1">
+          <div class="item-words">
+            <div class="words">
+              <h5>AR创新教室</h5>
+              <p>游戏化的教学方式，高互动性的教学内容，学生不再是仅仅直面书本，也能看到生动形象的主人公从书本中走出来.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="repose-div repose5">
+        <div class="item-div">
+          <img src="./images/5.png" alt="1">
+          <div class="item-words">
+            <div class="words">
+              <h5>AR创新教室</h5>
+              <p>游戏化的教学方式，高互动性的教学内容，学生不再是仅仅直面书本，也能看到生动形象的主人公从书本中走出来.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="repose-div repose7">
+        <div class="item-div">
+          <img src="./images/7.png" alt="1">
+          <div class="item-words">
+            <div class="words">
+              <h5>AR创新教室</h5>
+              <p>游戏化的教学方式，高互动性的教学内容，学生不再是仅仅直面书本，也能看到生动形象的主人公从书本中走出来.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="youshi">
+    <h5>技术优势</h5>
+    <div class="youshi-video">
+      <div class="video-item">
+        <video src="./src/yingjian_video3.mp4" loop></video>
+        <h5>平面点击</h5>
+        <p>平面点击将任意平面转化为可点击、滑动的互动平面，且支持多人多手多指同时操作。</p>
+      </div>
+      <div class="video-item">
+        <video src="./src/yingjian_video3.mp4"></video>
+        <h5>空中手势</h5>
+        <p>识别手部21关节点信息，从而支持多种空中动、静态手势运用。</p>
+      </div>
+      <div class="video-item">
+        <video src="./src/yingjian_video3.mp4"></video>
+        <h5>实物互动</h5>
+        <p>支持识别三维实物并对其精准投影，从而达到裸眼3D和实时互动的效果。</p>
+      </div>
+      <div class="video-item">
+        <video src="./src/yingjian_video3.mp4"></video>
+        <h5>图像识别</h5>
+        <p>支持各种自定义图像识别，满足多种使用场景。</p>
+      </div>
+    </div>
+  </section>
+  <section class="section1">
+    <h5>定制Android操作系统</h5>
+  </section>
+
+  <footer>
+    <div class="container clearfix">
+      <span class="container-left">网易公司版权所有 © 1997-2018</span>
+      <span class="container-right" id="go-top">返回顶部</span>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mb.YTPlayer.min.js"></script>
+<script src="./js/packery.pkgd.min.js"></script>
+<script>
+  $(function(){
+    // $('.player').mb_YTPlayer();
+    initRepos();
+    $('video').hover(function(){
+      $(this)[0].play();
+    },function(){
+      $(this)[0].pause();
+    })
+
+
+    $('#go-top').click(function(){
+      $('html,body').animate({
+        scrollTop: 0
+      }, 'slow')
+    })
+  })
+  window.onload = function () {
+    let oHonerWord = document.querySelector('.honer-word');
+    oHonerWord.classList.add('active');
+  }
+  window.addEventListener('scroll', function () {
+    let top = window.pageYOffset;
+    // let top = document.body.scrollHeight;
+    let oLight = document.querySelector('header')
+    if (top >= 10) {
+      oLight.classList.add('active')
+    } else if (top < 10) {
+      oLight.classList.remove('active')
+    }
+  })
+
+
+  function initRepos(){
+    console.log($.packery)
+    $('.repose-divs').packery({
+      // options
+      itemSelector: '.repose-div',
+      gutter: 10
+    });
+  }
+</script>
