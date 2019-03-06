@@ -1,0 +1,11 @@
+#star{
+  margin: 100px;
+  width: 55px;
+  height: 11px;
+  /*border: 1px solid green;*/
+  background-image: url("./rating.png");
+  background-repeat: no-repeat;
+  transform: scale(1.4);
+  box-sizing: border-box;
+  background-position: 0 -110px;
+}
