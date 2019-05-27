@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    main{
+      padding-top: 100px;
+    }
+    .wrap{
+      border: 1px solid #000;
+      /* text-align: center; */
+    }
+
+    .bg-img{
+      display: block;
+      margin: 0 auto;
+    }
+
+    .cc{
+      position: relative;
+      width: 1200px;
+      margin: 0 auto;
+    }
+    .link{
+      border: 1px solid red;
+      display: inline-block;
+      position: absolute;
+      right: 200px;
+      top: 200px;
+    }
+    .link::after{
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 182px;
+      background: orange;
+      position: absolute;
+      top: -182px;
+      left: calc(50% - 1px);
+    }
+    .link .link-a{
+      /* width: 100%; */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  
+  <main>
+    <div class="wrap">
+      <div class="cc">
+        <img src="./images/one_nav.png" class="bg-img">
+        <a href="#" class="link">
+          <img src="./images/one_button.png" class="link-a">
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
